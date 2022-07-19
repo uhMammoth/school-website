@@ -1,11 +1,33 @@
+import './App.css';
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { SliderData } from './components/SliderData';
+import ImageSlider from './pages/ImageSlider';
+import Contacts from './pages/Contacts';
+import Navbar from './components/NavBar';
+import Footer from './components/Footer';
+import Log from './pages/Log';
+import LogIn from './pages/LogIn';
+import Page from './pages/Page';
 import Calendar from "short-react-calendar";
-import "./App.css";
+
 
 function App() {
   return (
-    <div>
-      <Calendar calendarType="US" oneWeekCalendar={true} />
+    <div className="App">
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<ImageSlider slides={SliderData} />} />
+          <Route path="/log" element={<Log />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/page" element={<Page />} />
+          <Route path="/contact" element={<Contacts />} />
+        </Routes>
+        <Calendar calendarType="US" oneWeekCalendar={true} />
+        <Footer />
+      </Router>
     </div>
+    
   );
 }
 
