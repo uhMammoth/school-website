@@ -14,8 +14,8 @@ const counselorSchema = new Schema(
             type: String,
             required: true
         },
-        scheduleDays: [],
-        scheduleTimes: [],
+        scheduleDays: [{date: Date}],
+        scheduleTimes: [{type: String}],
         reservation: [reservationSchema]
     },
     {
