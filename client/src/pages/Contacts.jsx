@@ -33,7 +33,7 @@ const Contacts = () => {
       <div>
         <div class="text-center w-80">
           <label for="large-input" class="font-bold block mb-2 text-sm text-gray-900 mt-4">Tell us</label>
-          <textarea type="text" id="large-input" class="h-64 p-4 w-full text-gray-900 dark:bg-gray-50 rounded-lg border border-gray-300 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
+          <textarea type="text" id="large-input" class="h-48 p-4 w-full text-gray-900 dark:bg-gray-50 rounded-lg border border-gray-300 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
         </div>
       </div>
       </div>

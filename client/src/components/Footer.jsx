@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import { FaTimes, FaYoutube  } from 'react-icons/fa';
+import { FaTimes, FaYoutube } from 'react-icons/fa';
 import { BsInfoCircle } from 'react-icons/bs'
-import { AiFillFacebook, AiFillTwitterCircle, AiFillInstagram  } from 'react-icons/ai';
+import { AiFillFacebook, AiFillTwitterCircle, AiFillInstagram } from 'react-icons/ai';
 import iimage from '../assets/iimage.jpg'
 
 const Footer = () => {
