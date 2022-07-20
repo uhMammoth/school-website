@@ -4,6 +4,8 @@ const typeDefs = gql`
   type CounselorUser {
     _id: ID
     email: String
+    scheduleDays: [String]
+    scheduleTimes: [String]
     reservations: [Reservation]    
   }
   type StudentUser {
