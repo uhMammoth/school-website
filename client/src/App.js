@@ -1,15 +1,14 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { SliderData } from './components/SliderData';
 import ImageSlider from './pages/ImageSlider';
 import Contacts from './pages/Contacts';
 import Navbar from './components/NavBar';
 import Footer from './components/Footer';
-import Log from './pages/Log';
+import Signup from './pages/Signup';
 import LogIn from './pages/LogIn';
 import Page from './pages/Page';
-import Calendar from "short-react-calendar";
-
+import Calendar from 'short-react-calendar';
 
 function App() {
   return (
@@ -18,16 +17,15 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<ImageSlider slides={SliderData} />} />
-          <Route path="/log" element={<Log />} />
+          <Route path="/Signup" element={<Signup />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/page" element={<Page />} />
           <Route path="/contact" element={<Contacts />} />
         </Routes>
-        <Calendar calendarType="US" oneWeekCalendar={true} />
+        {/* <Calendar calendarType="US" oneWeekCalendar={true} /> */}
         <Footer />
       </Router>
     </div>
-    
   );
 }
 
