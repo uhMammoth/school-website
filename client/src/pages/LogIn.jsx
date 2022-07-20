@@ -6,6 +6,8 @@ import { RiLoginCircleFill } from 'react-icons/ri';
 const LogIn = () => {
     return (
         <div className='bg-white'>
+
+            {/* Desktop */}
             <div className='hidden lg:flex justify-end pr-80 mr-40'>
                 <div className=''>
                     <img src={image} alt='people smiling' className='object-cover object-right h-screen'></img>
@@ -35,6 +37,8 @@ const LogIn = () => {
             </form>
             </div>
             </div>
+
+            {/* Mobile */}
             <div className='lg:hidden'>
             <form className='mx-12'>
                 
