@@ -9,16 +9,13 @@ const reservationSchema = new Schema(
       required: true
     },
     counselor: {
-      type: Schema.Types.ObjectId,
-      ref: 'Counselor',
-      required: true
+      type: String,
+      require: true
     },
     student: {
-      type: Schema.Types.ObjectId,
-      ref: 'Student',
+      type: String,
       required: true
-    },
-    
+    },    
     date: {
       type: Date,
       default: Date.now,

@@ -20,7 +20,7 @@ const resolvers = {
       }
       throw new AuthenticationError('Not logged in');
     },
-    reservation: async (parent, args, context) => {
+    reservations: async (parent, args, context) => {
       if(context) {
         const reserveData = await Counselor.findOne({ _id: args.counselor._id })
         .select('-__v -password')
