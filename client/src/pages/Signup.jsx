@@ -7,8 +7,8 @@ const Signup = () => {
   return (
     <div>
       {/* Desktop */}
-      <div className='hidden lg:flex justify-center text-left mt-32'>
-      <form className='mx-12'>
+      <div className='hidden lg:flex justify-center text-left h-screen items-center pb-24 bg-gray-200'>
+      <form className='mx-12 bg-white p-12 rounded-lg border border-orange-500 shadow-lg shadow-slate-400'>
       
       <MdCreate className='text-8xl m-auto mb-2 text-blue-800' />
       <div className='text-3xl mb-14 text-gray-800 text-center'>Create Account</div>
