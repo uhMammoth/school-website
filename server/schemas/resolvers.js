@@ -44,6 +44,7 @@ const resolvers = {
         throw new AuthenticationError('Incorrect credentials');
       }
 
+      // if counselor=true include before sending out
       const token = signToken(user);
       return { token, user };
     },

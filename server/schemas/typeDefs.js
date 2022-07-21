@@ -15,18 +15,16 @@ const typeDefs = gql`
   }
   type Reservation {
     reservId: String
-    counselor: String
-    student: String
+    counselor: counselorId
+    student: studentId
     subject: String
-    date: String
-    time: String
+    date: Date
   }
   input ReservationInput {
-    counselor: String
-    student: String
+    counselor: counselorId
+    student: studentId
     subject: String
-    date: String
-    time: String
+    date: Date
   }
   type CounselorAuth {
     token: ID!
@@ -44,6 +42,7 @@ const typeDefs = gql`
   type Mutation {
     counselorLogin(email: String!, password: String!): CounselorAuth
     studentLogin(email: String!, password: String!): StudentAuth
+    schedule(): user
     addReserv(input: ReservationInput): StudentUser
     removeReserv(reservId: String!): StudentUser 
   }
