@@ -1,5 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { SliderData } from './components/SliderData';
+import ImageSlider from './pages/ImageSlider';
 import Home from './pages/Home';
 import Contacts from './pages/Contacts';
 import Navbar from './components/NavBar';
@@ -18,7 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/log" element={<Log />} />
           <Route path="/login" element={<LogIn />} />
-          <Route path="/counselor" element={<Home />} />
+          <Route path="/counselor" element={<ImageSlider slides={SliderData} />} />
           <Route path="/contact" element={<Contacts />} />
         </Routes>
         <Footer />
