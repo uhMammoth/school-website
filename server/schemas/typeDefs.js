@@ -11,27 +11,22 @@ const typeDefs = gql`
   }
   type Reservation {
     reservId: String
-    User: UserId
+    user: User
     subject: String
-    date: Date
-  }
-  input ReservationInput {
-    User: UserId
-    subject: String
-    date: Date
+    date: String
   }
   type UserAuth {
     token: ID!
     user: User  
   }
   type Query {
-    User: User
-    reservations(id: ID!): User
+    user: User
+    reservations(user: String!): User
   }
   type Mutation {
-    UserLogin(email: String!, password: String!): UserAuth
+    login(email: String!, password: String!): UserAuth
     schedule(counselor: Boolean!, scheduleDays: [String]!, scheduleTimes: [String]!): User
-    addReserv(input: ReservationInput): User
+    addReserv(user: String!, subject: String!, date: String!): User
     removeReserv(reservId: String!): User 
   }
 

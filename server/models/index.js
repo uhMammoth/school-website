@@ -1,5 +1,4 @@
-const Counselor = require('./User');
-const Student = require('./Student');
+const User = require('./User');
 const Reservation = require('./Reservation');
 
-module.exports = { Student, Counselor, Reservation };
+module.exports = { User, Reservation };
