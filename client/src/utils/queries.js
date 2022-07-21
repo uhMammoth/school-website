@@ -1,28 +1,43 @@
 import { gql } from '@apollo/client';
 
 export const GET_USER = gql`
-  {
+  query User {
     user {
-      _id
+      id
+      name
       email
+      scheduleDays
+      scheduleTimes
       reservations {
         reservId
-        user
+        user {
+          id
+          name
+        }
         subject
         date
-        time
       }
     }
   }
 `;
 
 export const GET_RESERVATION = gql`
-  query getReservations {
-    reservations {
-      reservId
-        user
-        subject
+  query Reservations($user: String!) {
+    reservations(user: $user) {
+      id
+      name
+      email
+      scheduleDays
+      scheduleTimes
+      reservations {
+        reservId
         date
+        subject
+        user {
+          id
+          name
+        }
+      }
     }
   }
 `;
