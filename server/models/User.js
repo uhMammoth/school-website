@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 const reservationSchema = require('./Reservation');
 const bcrypt = require('bcrypt');
 
-const counselorSchema = new Schema(
+const userSchema = new Schema(
     {
         email: {
             type: String,
@@ -14,9 +14,13 @@ const counselorSchema = new Schema(
             type: String,
             required: true
         },
-        scheduleDays: [{type: String}],
-        scheduleTimes: [{type: String}],
-        reservation: [reservationSchema]
+        scheduleDays: [String],
+        scheduleTimes: [String],
+        reservation: [reservationSchema],
+        counselor: {
+            type: Boolean,
+            required: true
+        }
     },
     {
         toJSON: {
@@ -25,7 +29,7 @@ const counselorSchema = new Schema(
     }
 );
 
-counselorSchema.pre('save', async function(next) {
+userSchema.pre('save', async function(next) {
     if (this.isNew || this.isModified('password')) {
         const saltRounds = 10;
         this.password = await bcrypt.hash(this.password, saltRounds);
@@ -33,10 +37,10 @@ counselorSchema.pre('save', async function(next) {
     next();
 });
 
-counselorSchema.methods.isCorrectPassword = async function(password) {
+userSchema.methods.isCorrectPassword = async function(password) {
     return bcrypt.compare(password, this.password);
 };
   
-const Counselor = model('Counselor', counselorSchema);
+const User = model('User', userSchema);
 
-module.exports = Counselor;
+module.exports = User;

@@ -4,6 +4,7 @@
         "password" : "kGjRfUNWUIRwfS_", 
         "reservations" : [], 
         "scheduleDay" : [],
-        "scheduleTime" : []
+        "scheduleTime" : [],
+        "counselor" : true
     }    
 ]

@@ -1,25 +1,19 @@
 const { Schema } = require('mongoose');
-const { Counselor, Student } = require('./');
+const { User } = require('./');
 const dateFormat = require('../utils/dateFormat');
 
 const reservationSchema = new Schema(
   {
     reservationSubject: {
       type: String,
-      required: true
-      // default free
+      required: true,
+      default: 'Walk In'
     },
-    counselor: {
+    user: {
       type: Schema.Types.ObjectId,
-      ref: 'Counselor',
-      required: true
-    },
-    student: {
-      type: Schema.Types.ObjectId,
-      ref: 'Student',
-      required: true
-      // allow null true
-    },   
+      ref: 'User',
+      required: false
+    },  
     date: {
       type: Date,
       default: Date.now,
