@@ -8,7 +8,6 @@ import Footer from './components/Footer';
 import Signup from './pages/Signup';
 import LogIn from './pages/LogIn';
 import Page from './pages/Page';
-import Calendar from 'short-react-calendar';
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
           <Route path="/page" element={<Page />} />
           <Route path="/contact" element={<Contacts />} />
         </Routes>
-        {/* <Calendar calendarType="US" oneWeekCalendar={true} /> */}
         <Footer />
       </Router>
     </div>
