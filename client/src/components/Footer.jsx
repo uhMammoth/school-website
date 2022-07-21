@@ -14,12 +14,12 @@ const Footer = () => {
     const handleClick = () => setNav(!nav)
 
     return (
-        <div className='fixed bottom-0 w-[340px] h-16 pt-4 flex' >
+        <div className='fixed bottom-0 w-[340px] h-12 flex' >
 
 
 
 
-            <div onClick={handleClick}className='md:hidden z-10 pl-44 pb-2 text-2xl text-orange-500'>
+            <div onClick={handleClick}className='md:hidden z-10 pl-[180px] pt-2 text-2xl text-orange-500'>
                 {!nav ? <BsInfoCircle /> : <FaTimes />}
             </div>
         
