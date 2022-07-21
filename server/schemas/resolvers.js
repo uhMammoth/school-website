@@ -1,28 +1,28 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Counselor, Reservation, Student } = require('../models');
+const { User, Reservation } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-    counselor: async (parent, args, context) => {
+    user: async (parent, args, context) => {
       if (context.counselor) {
-        const counselorUserData = await Counselor.findOne({ _id: context.counselor._id })
+        const UserData = await User.findOne({ _id: context.User._id })
           .select('-__v -password')
-        return counselorUserData;
-      }
-      throw new AuthenticationError('Not logged in');
-    },
-    student: async (parent, args, context) => {
-      if (context.user) {
-        const studentUserData = await Student.findOne({ _id: context.student._id })
-          .select('-__v -password')
-        return studentUserData;
+          .populate('reservations')
+          .populate('scheduleDays')
+          .populate('scheduleTimes')
+        return UserData;
+      }else if (!context.counselor){
+        const UserData = await User.findOne({ _id: context.User._id })
+          .select('-__v -password -counselor')
+          .populate('reservations')
+        return UserData;
       }
       throw new AuthenticationError('Not logged in');
     },
     reservations: async (parent, args, context) => {
       if(context) {
-        const reserveData = await Counselor.findOne({ _id: args.counselor._id })
+        const reserveData = await User.findOne({ _id: args.user._id })
         .select('-__v -password')
         .populate('reservations');
       return reserveData;
@@ -31,8 +31,8 @@ const resolvers = {
   },
 
   Mutation: {
-    counselorLogin: async (parent, { email, password }) => {
-      const user = await Counselor.findOne({ email });
+    Login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
 
       if (!user) {
         throw new AuthenticationError('Incorrect credentials');
@@ -43,24 +43,8 @@ const resolvers = {
       if (!correctPw) {
         throw new AuthenticationError('Incorrect credentials');
       }
-
+      
       // if counselor=true include before sending out
-      const token = signToken(user);
-      return { token, user };
-    },
-    studentLogin: async (parent, { email, password }) => {
-      const user = await Student.findOne({ email });
-
-      if (!user) {
-        throw new AuthenticationError('Incorrect credentials');
-      }
-
-      const correctPw = await user.isCorrectPassword(password);
-
-      if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
-      }
-
       const token = signToken(user);
       return { token, user };
     },

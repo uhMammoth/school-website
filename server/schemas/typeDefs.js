@@ -1,50 +1,38 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  type CounselorUser {
+  type User {
     id: ID
     email: String
     scheduleDays: [String]
     scheduleTimes: [String]
-    reservations: [Reservation]    
-  }
-  type StudentUser {
-    id: ID
-    email: String
-    reservations: [Reservation]   
+    reservations: [Reservation]
+    counselor: Boolean    
   }
   type Reservation {
     reservId: String
-    counselor: counselorId
-    student: studentId
+    User: UserId
     subject: String
     date: Date
   }
   input ReservationInput {
-    counselor: counselorId
-    student: studentId
+    User: UserId
     subject: String
     date: Date
   }
-  type CounselorAuth {
+  type UserAuth {
     token: ID!
-    user: CounselorUser  
-  }
-  type StudentAuth {
-    token: ID!
-    user: StudentUser  
+    user: User  
   }
   type Query {
-    counselor: CounselorUser
-    student: StudentUser
-    reservations(id: ID!): CounselorUser
+    User: User
+    reservations(id: ID!): User
   }
   type Mutation {
-    counselorLogin(email: String!, password: String!): CounselorAuth
-    studentLogin(email: String!, password: String!): StudentAuth
-    schedule(): user
-    addReserv(input: ReservationInput): StudentUser
-    removeReserv(reservId: String!): StudentUser 
+    UserLogin(email: String!, password: String!): UserAuth
+    schedule(counselor: Boolean!, scheduleDays: [String]!, scheduleTimes: [String]!): User
+    addReserv(input: ReservationInput): User
+    removeReserv(reservId: String!): User 
   }
 
 `;
