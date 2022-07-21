@@ -27,10 +27,8 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): UserAuth
     schedule(counselor: Boolean!, scheduleDays: [String]!, scheduleTimes: [String]!): User
-    addReserv(user: String!, subject: String!, date: String!): User
+    addReserv(counselorId: String!, subject: String!, date: String!): User
     removeReserv(reservId: String!): User 
   }
-
 `;
-
 module.exports = typeDefs;
