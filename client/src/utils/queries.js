@@ -1,31 +1,13 @@
 import { gql } from '@apollo/client';
 
-export const GET_COUNSELOR = gql`
+export const GET_USER = gql`
   {
-    counselor {
+    user {
       _id
       email
       reservations {
         reservId
-        counselor
-        student
-        subject
-        date
-        time
-      }
-    }
-  }
-`;
-
-export const GET_STUDENT = gql`
-  {
-    student {
-      _id
-      email
-      reservations {
-        reservId
-        counselor
-        student
+        user
         subject
         date
         time
@@ -38,11 +20,9 @@ export const GET_RESERVATION = gql`
   query getReservations {
     reservations {
       reservId
-        counselor
-        student
+        user
         subject
         date
-        time
     }
   }
-`
+`;
