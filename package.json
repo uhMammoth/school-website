@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/uhMammoth/school-website/issues"
   },
-  "homepage": "https://github.com/uhMammoth/school-website#readme"
+  "homepage": "https://github.com/uhMammoth/school-website#readme",
+  "devDependencies": {
+    "concurrently": "^7.3.0"
+  }
 }
