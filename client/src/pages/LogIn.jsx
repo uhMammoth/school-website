@@ -81,7 +81,8 @@ const LogIn = () => {
                 
             </form>
             </div>
-            </div>}
+            </div>
+}
             
             {/* Mobile */}
             <div className='lg:hidden'>
@@ -107,12 +108,8 @@ const LogIn = () => {
                 <div class="relative z-0 mt-6 w-full group">
                     <Link className='text-md text-gray-800 ml-24 mt-8 underline font-semibold'  to='/Signup'>create account</Link>
                 </div>
-                
+                </form>
+            </div>;
+            </div>)};
 
-            </form>
-        </div>
-        </div>
-    )
-}
-
-export default LogIn
+export default LogIn;

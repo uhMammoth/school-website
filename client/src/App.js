@@ -22,6 +22,10 @@ function App() {
           <Route path="/login" element={<LogIn />} />
           <Route path="/page" element={<Page />} />
           <Route path="/counselor" element={<Home />} />
+          <Route
+            path="/counselor"
+            element={<ImageSlider slides={SliderData} />}
+          />
           <Route path="/contact" element={<Contacts />} />
         </Routes>
         <Footer />

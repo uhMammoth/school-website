@@ -1,26 +1,56 @@
+import One from '../assets/1.jpg';
+import Two from '../assets/2.jpg';
+import Three from '../assets/3.jpg';
+import Four from '../assets/4.jpg';
+import Five from '../assets/5.jpg';
+import Bottom from '../assets/counserlorb.jpg';
+
+
+
 export const SliderData = [
     {
-        image: 'https://images.unsplash.com/photo-1565673962390-b73ebae87d3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80'
+        id: '1',
+        name: 'Emily Cortez',
+        image: One,
+        area: "Academic Counseling",
+        title: `"Start building towards the future."`,
+        lorem: 'lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dol',
+        img: Bottom 
     },
     {
-        image: 'https://images.unsplash.com/photo-1517747614396-d21a78b850e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80'
+        id: '2',
+        name: 'Michelle Hamn',
+        image: Two,
+        area: "Mental Health Counseling",
+        title: `"It is never too late."`,
+        lorem: 'lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dol',
+        img: Bottom 
     },    
     {
-        image: 'https://images.unsplash.com/photo-1549081231-203e069916f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80'
+        id: '3',
+        name: 'Alex Garcia',
+        image: Three,
+        area: "Addiction Counseling",
+        title: `"Everyone can use a helping hand."`,
+        lorem: 'lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dol',
+        img: Bottom   
     },
     {
-        image: 'https://images.unsplash.com/photo-1565798846807-2af22c843402?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=666&q=80'
+        id: '4',
+        name: 'Marc Nguyenn',
+        image: Four,        
+        area: "Career Counseling",
+        title: `"Your choices today impacts your future."`,
+        lorem: 'lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dol',
+        img: Bottom     
     },    
     {
-        image: 'https://images.unsplash.com/photo-1629904853716-f0bc54eea481?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
+        id: '5',
+        name: 'Aaron Carter',
+        image: Five,
+        area: "Academic Counseling",
+        title: `"Take the right class that matter."`,
+        lorem: 'lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dol',
+        img: Bottom 
     },    
-    {
-        image: 'https://images.unsplash.com/photo-1580537659466-0a9bfa916a54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
-    },
-    {
-        image: 'https://images.unsplash.com/photo-1609534655988-3f5225c13553?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80'
-    },
-    {
-        image: 'https://images.unsplash.com/photo-1549980384-d61217e50c4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80'
-    }
 ]
