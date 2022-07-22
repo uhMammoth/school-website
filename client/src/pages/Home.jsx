@@ -10,7 +10,10 @@ import { IoPersonAddSharp } from 'react-icons/io';
 
 const Home = () => {
   return (
-    <div className="">
+    <div>
+      <div className='hidden lg:flex'>
+
+      </div>
     <div className="flex justify-between pt-1 h-10 w-full ">  
       <BsCalendarWeekFill className="opacity-30 sticky top-0 text-3xl mx-3 text-blue-800"/> 
       <BsPersonCircle className="opacity-30 sticky top-0 text-3xl mx-3 text-blue-800"/>
