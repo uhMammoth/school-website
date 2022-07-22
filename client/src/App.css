@@ -282,3 +282,17 @@
   clip-path: polygon(0 0,100% 0, 100% 100%,0 90%);
 
 }
+
+@media (min-width: 1024px) {
+  .right-arrow {
+    position: absolute;
+    right: 40%;
+    top: 25%
+  }
+  
+  .left-arrow {
+    position: absolute;
+    left: 40%;
+    top: 25%
+  }
+}
