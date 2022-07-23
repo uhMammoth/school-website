@@ -1,5 +1,4 @@
 const userSeeds = require('./userSeed.json');
-const reservationSeeds = require('./reservationSeed.json');
 const db = require('../config/connection');
 const { Reservation, User } = require('../models');
 
