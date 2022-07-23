@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { FaTimes } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import { BsInfoCircle } from 'react-icons/bs'
 import { AiFillFacebook } from 'react-icons/ai';
 import { AiFillInstagram } from 'react-icons/ai';
@@ -12,19 +11,15 @@ import iimage from '../assets/iimage.jpg'
 const Footer = () => {
     const [nav, setNav] = useState(false)
     const handleClick = () => setNav(!nav)
-
     return (
-        <div className='fixed bottom-0 w-full nav h-9 flex' >
-
-
-
-
-            <div onClick={handleClick}className='md:hidden z-10 mx-auto pt-2 text-2xl orange'>
-                {!nav ? <BsInfoCircle /> : <FaTimes />}
-            </div>
         
+        /*  mobile i-button/hidden  */
+        <div className='fixed bottom-0 w-full nav h-9 flex' >
+            <div onClick={handleClick}className='md:hidden z-10 mx-auto pt-2 text-2xl orange'>
+                {!nav ? <BsInfoCircle /> : <FaTimes />} 
+            </div>
             <ul className={!nav? 'hidden': 'nav rounded-t-xl absolute bottom-0 w-[320px] rblue h-auto ml-8 bg-white flex flex-col justify-center items-center'}>
-                <img src={iimage} alt='' className='mt-4 w-full iimage '/>
+                <img src={iimage} alt='students happy hanging out' className='mt-4 w-full iimage '/>
                 <div className='font-thin text-3xl mt-6 '>Lorem Ipsum School</div>
                 <div className='font-thin text-lg mt-2 '>Counseling Deparment</div>
                 <div className='font-thin text-lg mt-6 ' >Hours: 7:00 AM - 7:00 PM</div>

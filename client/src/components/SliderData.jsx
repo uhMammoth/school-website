@@ -5,8 +5,7 @@ import Four from '../assets/4.jpg';
 import Five from '../assets/5.jpg';
 import Bottom from '../assets/counserlorb.jpg';
 
-
-
+/*  slider data  */ 
 export const SliderData = [
     {
         id: '1',
