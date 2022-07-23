@@ -6,17 +6,16 @@ const resolvers = {
   Query: {
     //individual user query for student or counselor dashboard
     user: async (parent, args, context) => {
+      console.log('is this working');
       if (context.counselor) {
-        const UserData = await User.findOne({ _id: context.User._id })
+        const UserData = await User.findOne({ _id: args._id })
           .select('-__v -password')
-          .populate('reservations')
-          .populate('scheduleDays')
-          .populate('scheduleTimes')
+          .populate('reservations');
         return UserData;
       }else if (!context.counselor){
-        const UserData = await User.findOne({ _id: context.User._id })
-          .select('-__v -password -counselor')
-          .populate('reservations')
+        const UserData = await User.findOne({ _id: args._id })
+          .select('-__v -password')
+          .populate('reservations');
         return UserData;
       }
       throw new AuthenticationError('Not logged in');
@@ -29,7 +28,7 @@ const resolvers = {
           .select('-__v -password')
           .populate('reservations')
           .populate('scheduleDays')
-          .populate('scheduleTimes')
+          .populate('scheduleTimes');
         return UserData;
       }
       throw new AuthenticationError('Not logged in');
@@ -47,7 +46,6 @@ const resolvers = {
 
   Mutation: {
     login: async (parent, { email, password }) => {
-      console.log('working');
       const user = await User.findOne({ email });
       if (!user) {
         throw new AuthenticationError('Incorrect credentials');
@@ -63,7 +61,7 @@ const resolvers = {
     },
     //students can make a reservation which saves to botht the student and counselors userData
     addReserv: async (parent, {input}, context) => {
-      if (context.student) {
+      if (context) {
         const studentReserve = await User.findOneAndUpdate(
           { _id: context.student._id },
           { $addToSet: { reservation: input} },

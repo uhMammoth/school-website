@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-const { User } = require('./');
 const dateFormat = require('../utils/dateFormat');
 
 const reservationSchema = new Schema(
