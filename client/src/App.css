@@ -41,7 +41,6 @@
 /*  slider */
 .slider {
   position: relative;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,8 +52,8 @@
   position: absolute;
   top: 50%;
   right: 32px;
-  font-size: 3rem;
-  color: #000;
+  font-size: 30px;
+  color: #FF8200;
   z-index: 10;
   cursor: pointer;
   user-select: none;
@@ -64,8 +63,8 @@
   position: absolute;
   top: 50%;
   left: 32px;
-  font-size: 3rem;
-  color: #000;
+  font-size: 30px;
+  color: #FF8200;
   z-index: 10;
   cursor: pointer;
   user-select: none;
@@ -86,4 +85,29 @@
 
   clip-path: polygon(0 0,100% 0, 100% 100%,0 90%);
 
+}
+
+.rblue {
+  color: #003594;
+}
+.yellow {
+  color: #FFD100;
+}
+.orange {
+  color: #FF8200;
+}
+.orangeyellow {
+  color: #FFA300;
+}
+.covid{
+  background-color: #FFD100;
+}
+.bgblue{
+  background-color: #003594;
+}
+.homebtn {
+  border: .5px solid #003594;
+}
+.nav{
+  border: .5px solid #FF8200
 }
