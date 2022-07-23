@@ -5,13 +5,14 @@ const typeDefs = gql`
     id: ID
     name: String
     email: String
+    imageUrl: String
     scheduleDays: [String]
     scheduleTimes: [String]
     reservations: [Reservation]
     counselor: Boolean    
   }
   type Reservation {
-    reservId: String
+    id: ID
     user: User
     subject: String
     date: String
@@ -21,7 +22,8 @@ const typeDefs = gql`
     user: User  
   }
   type Query {
-    user: User
+    counselors: [User]
+    user(id: ID!): User
     reservations(user: String!): User
   }
   type Mutation {

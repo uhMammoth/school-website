@@ -1,4 +1,5 @@
 const userSeeds = require('./userSeed.json');
+const reservationSeeds = require('./reservationSeed.json');
 const db = require('../config/connection');
 const { Reservation, User } = require('../models');
 
@@ -9,22 +10,22 @@ db.once('open', async () => {
 
     await User.create(userSeeds);
 
-  //   for (let i = 0; i < thoughtSeeds.length; i++) {
-  //     const { _id, thoughtAuthor } = await Thought.create(thoughtSeeds[i]);
+  //   for (let i = 0; i < reservationSeeds.length; i++) {
+  //     const { id, student, counselor } = await Reservation.create(reservationSeeds[i]);
   //     const user = await User.findOneAndUpdate(
-  //       { username: thoughtAuthor },
+  //       { id: student.id },
   //       {
   //         $addToSet: {
-  //           thoughts: _id,
+  //           reservations: id,
   //         },
   //       }
   //     );
   //   }
-  // } catch (err) {
-  //   console.error(err);
-  //   process.exit(1);
+  } catch (err) {
+    console.error(err);
+    process.exit(1);
   }
 
-  // console.log('all done!');
-  // process.exit(0);
+  console.log('all done!');
+  process.exit(0);
 });

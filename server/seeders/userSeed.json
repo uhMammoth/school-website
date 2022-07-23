@@ -1,10 +1,18 @@
 [
     { 
-        "email" : "Molly48_Waters59@hotmail.com", 
-        "password" : "kGjRfUNWUIRwfS_", 
-        "reservations" : [], 
-        "scheduleDay" : [],
-        "scheduleTime" : [],
+        "name" : "Emily",
+        "email" : "Molly48_Waters59@hotmail.com",
+        "imageUrl" : "1.jpg",
+        "password" : "kGjRfUNWUIRwfS_",
+        "scheduleDay" : ["Mon", "Tue", "Wed"],
+        "scheduleTime" : ["3:00PM", "3:30PM"],
         "counselor" : true
-    }    
+    },
+    {
+        "name" : "John",
+        "email" : "john59@hotmail.com",
+        "imageUrl" : "",
+        "password" : "zsdf41g54FSD%",
+        "counselor" : false 
+    }   
 ]

@@ -21,6 +21,19 @@ const resolvers = {
       }
       throw new AuthenticationError('Not logged in');
     },
+    //query to get all counselors data
+    counselors: async (parent, context) => {
+      if(context) {
+        const UserData = await User.find()
+          .where('counselor').equals(true)
+          .select('-__v -password')
+          .populate('reservations')
+          .populate('scheduleDays')
+          .populate('scheduleTimes')
+        return UserData;
+      }
+      throw new AuthenticationError('Not logged in');
+    },
     //queries a student or counselors reservation list
     reservations: async (parent, args, context) => {
       if(context) {
@@ -34,6 +47,7 @@ const resolvers = {
 
   Mutation: {
     login: async (parent, { email, password }) => {
+      console.log('working');
       const user = await User.findOne({ email });
       if (!user) {
         throw new AuthenticationError('Incorrect credentials');

@@ -1,4 +1,4 @@
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
 const { User } = require('./');
 const dateFormat = require('../utils/dateFormat');
 
@@ -9,7 +9,12 @@ const reservationSchema = new Schema(
       required: true,
       default: 'Walk In'
     },
-    user: {
+    student: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: false
+    },
+    counselor: {
       type: Schema.Types.ObjectId,
       ref: 'User',
       required: false
@@ -27,4 +32,6 @@ const reservationSchema = new Schema(
   }
 );
 
-module.exports = reservationSchema;
+const Reservation = model('Reservation', reservationSchema);
+
+module.exports = Reservation;

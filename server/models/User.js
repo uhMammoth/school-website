@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-const reservationSchema = require('./Reservation');
 const bcrypt = require('bcrypt');
 
 const userSchema = new Schema(
@@ -14,13 +13,22 @@ const userSchema = new Schema(
             unique: true,
             match: [/.+@.+\..+/, 'Must match an email address!']
         },
+        imageUrl: {
+            type: String,
+            default: ''
+        },
         password: {
             type: String,
             required: true
         },
         scheduleDays: [String],
         scheduleTimes: [String],
-        reservation: [reservationSchema],
+        reservations: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Reservation'
+            }
+        ],
         counselor: {
             type: Boolean,
             required: true
