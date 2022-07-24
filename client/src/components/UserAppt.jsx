@@ -6,7 +6,7 @@ export default function UserAppt (user){
         <section className="border">            
             Upcoming Appointments: <br/>
             ____________________________________
-            {!user.appointments || user.apptCount < 1 ? (
+            {!user.appointments || user.appointments.length < 1 ? (
                 <div>No Appointments!</div>
             ) : (
                 user.appointments.map(appointment => (

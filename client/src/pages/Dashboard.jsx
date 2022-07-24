@@ -15,7 +15,7 @@ const Dashboard = () => {
 
   const {data} = useQuery(QUERY_ME);
   const user = data?.me || {};
-
+  console.log(data);
   if(!Auth.loggedIn()){
     return (<Navigate replace to='/login'/>);
   } 
