@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 
 const NavBar = () => {
-    const [nav, setNav] = useState(false)
-    const handleClick = () => setNav(!nav)
+    const [nav, setNav] = useState(false);
+    const handleClick = () => setNav(!nav);
 
-    return (
+    return (        
         <div className='fixed top-0 w-full h-16 flex z-10 justify-center'> 
         {/* Desktop */}       
         <div className="hidden lg:flex bg-white w-full h-full items-center justify-center shadow-md shadow-slate-200">

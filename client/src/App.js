@@ -1,5 +1,14 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
 import { SliderData } from './components/SliderData';
 import ImageSlider from './pages/ImageSlider';
 import Home from './pages/Home';
@@ -9,13 +18,6 @@ import Footer from './components/Footer';
 import Signup from './pages/Signup';
 import LogIn from './pages/LogIn';
 import Page from './pages/Page';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
