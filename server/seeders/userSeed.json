@@ -4,8 +4,8 @@
         "email" : "Molly48_Waters59@hotmail.com",
         "imageUrl" : "1.jpg",
         "password" : "kGjRfUNWUIRwfS_",
-        "scheduleDay" : ["Mon", "Tue", "Wed"],
-        "scheduleTime" : ["3:00PM", "3:30PM"],
+        "scheduleDay" : "Mon Tue Wed",
+        "scheduleTime" : "3:00PM 3:30PM",
         "counselor" : true
     },
     {

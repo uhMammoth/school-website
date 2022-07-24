@@ -21,8 +21,14 @@ const userSchema = new Schema(
             type: String,
             required: true
         },
-        scheduleDays: [String],
-        scheduleTimes: [String],
+        scheduleDays: {
+            type: String,
+            default: ''
+        },
+        scheduleTimes: {
+            type: String,
+            default: ''
+        },
         reservations: [
             {
                 type: Schema.Types.ObjectId,
