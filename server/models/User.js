@@ -42,7 +42,8 @@ const userSchema = new Schema(
     },
     {
         toJSON: {
-          virtuals: true
+          virtuals: true,
+          getters: true
         }
     }
 );
@@ -58,7 +59,11 @@ userSchema.pre('save', async function(next) {
 userSchema.methods.isCorrectPassword = async function(password) {
     return bcrypt.compare(password, this.password);
 };
-  
+
+userSchema.virtual('apptCount').get(function() {
+    return this.appointments.length;
+  });
+
 const User = model('User', userSchema);
 
 module.exports = User;
