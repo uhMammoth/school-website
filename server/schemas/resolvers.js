@@ -26,9 +26,7 @@ const resolvers = {
         const UserData = await User.find()
           .where('counselor').equals(true)
           .select('-__v -password')
-          .populate('reservations')
-          .populate('scheduleDays')
-          .populate('scheduleTimes');
+          .populate('reservations');
         return UserData;
       }
       throw new AuthenticationError('Not logged in');
