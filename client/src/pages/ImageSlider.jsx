@@ -56,7 +56,7 @@ const ImageSlider = ({ slides }) => {
                         <div className='lg:hidden'>
                         <img src={slide.img} alt='' className='w-full pt-6' />
                         <div className="  w-full  bottom-0">  
-                            <button type="button" class=" w-full border-2 border-blue-200 text-white bg-gradient-to-b from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium text-sm py-3 text-center">Schedule a Meeting</button>
+                            <button type="button" className=" w-full border-2 border-blue-200 text-white bg-gradient-to-b from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium text-sm py-3 text-center">Schedule a Meeting</button>
                         </div>
                         </div>
                     </>
