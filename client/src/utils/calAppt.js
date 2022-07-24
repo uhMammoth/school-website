@@ -1,9 +1,9 @@
 export default function something(counselor){
-    console.log(counselor);
+    // console.log(counselor);
     const {scheduleDays, scheduleTimes, reservations} = counselor;
     const days = scheduleDays.split(' ');
     const times = scheduleTimes.split(' ');
-    console.log(days,times)
+    // console.log(days,times)
 
     return 'blah';
 };

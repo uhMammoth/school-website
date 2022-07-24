@@ -1,10 +1,10 @@
 const userSeeds = require('./userSeed.json');
 const db = require('../config/connection');
-const { Reservation, User } = require('../models');
+const { Appointment, User } = require('../models');
 
 db.once('open', async () => {
   try {
-    await Reservation.deleteMany({});
+    await Appointment.deleteMany({});
     await User.deleteMany({});
 
     await User.create(userSeeds);

@@ -1,16 +1,15 @@
 import { gql } from '@apollo/client';
 
-export const GET_USER = gql`
-  query User($id: ID!) {
-    user(_id: $id) {
+export const QUERY_ME = gql`
+  query me {
+    me {
       _id
       name
       email
       imageUrl
       scheduleDays
       scheduleTimes
-      counselor
-      reservations {
+      appointments {
         _id
       }
     }
@@ -18,21 +17,16 @@ export const GET_USER = gql`
 `;
 
 export const GET_RESERVATION = gql`
-  query Reservations($user: String!) {
-    reservations(user: $user) {
+  query counselors {
+    counselors {
       _id
       name
       email
+      imageUrl
       scheduleDays
       scheduleTimes
-      reservations {
-        reservId
-        date
-        subject
-        user {
-          _id
-          name
-        }
+      appointments {
+        _id
       }
     }
   }

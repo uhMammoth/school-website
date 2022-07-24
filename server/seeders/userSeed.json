@@ -4,8 +4,8 @@
         "email" : "Molly48_Waters59@hotmail.com",
         "imageUrl" : "1.jpg",
         "password" : "kGjRfUNWUIRwfS_",
-        "scheduleDay" : "Mon Tue Wed",
-        "scheduleTime" : "3:00PM 3:30PM",
+        "scheduleDays" : "Mon Tue Wed",
+        "scheduleTimes" : "3:00PM 3:30PM",
         "counselor" : true
     },
     { 
@@ -13,8 +13,8 @@
         "email" : "john59@hotmail.com",
         "imageUrl" : "2.jpg",
         "password" : "%kGjRfUNWUIRwfS_",
-        "scheduleDay" : "Mon Tue Wed",
-        "scheduleTime" : "3:00PM 3:30PM",
+        "scheduleDays" : "Mon Tue Wed",
+        "scheduleTimes" : "3:00PM 3:30PM",
         "counselor" : true
     },
     { 
@@ -22,8 +22,8 @@
         "email" : "steve59@hotmail.com",
         "imageUrl" : "3.jpg",
         "password" : "g^kGjRfUNWUIRwfm",
-        "scheduleDay" : "Mon Tue Wed",
-        "scheduleTime" : "3:00PM 3:30PM",
+        "scheduleDays" : "Mon Tue Wed",
+        "scheduleTimes" : "3:00PM 3:30PM",
         "counselor" : true
     },
     { 
@@ -31,8 +31,8 @@
         "email" : "paul59@hotmail.com",
         "imageUrl" : "4.jpg",
         "password" : "564&1kGjRfUNWUIRw",
-        "scheduleDay" : "Mon Tue Wed",
-        "scheduleTime" : "3:00PM 3:30PM",
+        "scheduleDays" : "Mon Tue Wed",
+        "scheduleTimes" : "3:00PM 3:30PM",
         "counselor" : true
     },
     { 
@@ -40,8 +40,8 @@
         "email" : "charlotee59@hotmail.com",
         "imageUrl" : "5.jpg",
         "password" : "$shdslkjRfUNWUIRwfS_",
-        "scheduleDay" : "Mon Tue Wed",
-        "scheduleTime" : "3:00PM 3:30PM",
+        "scheduleDays" : "Mon Tue Wed",
+        "scheduleTimes" : "3:00PM 3:30PM",
         "counselor" : true
     },
     {

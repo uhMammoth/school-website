@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 import {
   ApolloClient,
@@ -17,7 +17,7 @@ import Navbar from './components/NavBar';
 import Footer from './components/Footer';
 import Signup from './pages/Signup';
 import LogIn from './pages/LogIn';
-import Page from './pages/Page';
+import Dashboard from './pages/Dashboard';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -47,9 +47,10 @@ function App() {
           <Route path="/" element={<ImageSlider slides={SliderData} />} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/login" element={<LogIn />} />
-          <Route path="/page" element={<Page />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/counselor" element={<Home />} />
           <Route path="/contact" element={<Contacts />} />
+          <Route path="*" element={<Navigate replace to="/"/>}/>
         </Routes>
         <Footer />
       </Router>

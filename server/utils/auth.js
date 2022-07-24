@@ -26,12 +26,10 @@ module.exports = {
     } catch {
       console.log('Invalid token');
     }
-
     return req;
   },
   signToken: function({ email, _id, counselor }) {
     const payload = { email, _id, counselor };
-
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
   }
 };

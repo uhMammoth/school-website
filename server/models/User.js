@@ -29,10 +29,10 @@ const userSchema = new Schema(
             type: String,
             default: ''
         },
-        reservations: [
+        appointments: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'Reservation'
+                ref: 'Appointment'
             }
         ],
         counselor: {

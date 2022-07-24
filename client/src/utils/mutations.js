@@ -12,11 +12,42 @@ export const LOGIN_USER = gql`
 `;
 
 export const UPDATE_SCHED = gql`
-  mutation Schedule($counselor: Boolean!, $scheduleDays: [String]!, $scheduleTimes: [String]!) {
-    schedule(counselor: $counselor, scheduleDays: $scheduleDays, scheduleTimes: $scheduleTimes) {
+  mutation updateSched($scheduleDays: String!, $scheduleTimes: String!) {
+    updateSched(scheduleDays: $scheduleDays, scheduleTimes: $scheduleTimes) {
       _id
       scheduleDays
       scheduleTimes
+    }
+  }
+`;
+
+export const ADD_APPT = gql`
+  mutation addAppt($subject: String!, $student: String!, $counselor: String!, $date: String!) {
+    addAppt(subject: $subject, student: $student, counselor: $counselor, date: $date) {
+      appointments {
+        counselor {
+          name
+          _id
+        }
+        student {
+          name
+          _id
+        }
+        subject
+        date
+        _id
+      }
+    }
+  }
+`;
+
+export const DEL_APPT = gql`
+  mutation delAppt($id: ID!) {
+    delAppt(_id: $id) {
+      _id
+      appointments {
+        _id
+      }
     }
   }
 `;

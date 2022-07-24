@@ -1,9 +1,9 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const reservationSchema = new Schema(
+const apptSchema = new Schema(
   {
-    reservationSubject: {
+    apptSubject: {
       type: String,
       required: true,
       default: 'Walk In'
@@ -31,6 +31,6 @@ const reservationSchema = new Schema(
   }
 );
 
-const Reservation = model('Reservation', reservationSchema);
+const Appointment = model('Appointment', apptSchema);
 
-module.exports = Reservation;
+module.exports = Appointment;

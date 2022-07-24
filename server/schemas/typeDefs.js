@@ -6,15 +6,16 @@ const typeDefs = gql`
     name: String
     email: String
     imageUrl: String
-    scheduleDays: [String]
-    scheduleTimes: [String]
-    reservations: [Reservation]
+    scheduleDays: String
+    scheduleTimes: String
+    appointments: [Appointment]
     counselor: Boolean    
   }
-  type Reservation {
+  type Appointment {
     _id: ID
-    user: User
     subject: String
+    student: User
+    counselor: User
     date: String
   }
   type Auth {
@@ -23,14 +24,13 @@ const typeDefs = gql`
   }
   type Query {
     counselors: [User]
-    user(_id: ID!): User
-    reservations(user: String!): User
+    me: User
   }
   type Mutation {
     login(email: String!, password: String!): Auth
-    schedule(counselor: Boolean!, scheduleDays: [String]!, scheduleTimes: [String]!): User
-    addReserv(counselorId: String!, subject: String!, date: String!): User
-    removeReserv(reservId: String!): User 
+    updateSched(scheduleDays: String!, scheduleTimes: String!): User
+    addAppt(subject: String!, student: String!, counselor: String!, date: String!): User
+    delAppt(_id: ID!): User 
   }
 `;
 module.exports = typeDefs;

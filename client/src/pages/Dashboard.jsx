@@ -1,12 +1,19 @@
-import React, { useState} from 'react';
+import React, {useState} from 'react';
+import { Navigate } from 'react-router-dom';
 import Calendar from '../components/Calendar';
-import Details from '../components/Details';
 import calAppt from '../utils/calAppt';
+import {useQuery, useMutation} from '@apollo/client';
+import {QUERY_ME} from '../utils/queries';
+import Auth from '../utils/auth';
 
-const Page = () => {
+const Dashboard = () => {
   const [showDetails, setShowDetails] = useState(false);
   const [data, setData] = useState(null);
-  
+  const {user} = useQuery(QUERY_ME);
+  console.log(user);
+  if(!Auth.loggedIn()){
+    return (<Navigate replace to='/login'/>);
+  }
   const date = new Date;
   const counselor = {
     scheduleDays: "Mon Tues Wed Thur Fri",
@@ -31,4 +38,4 @@ const Page = () => {
   )
 }
 
-export default Page
+export default Dashboard;
