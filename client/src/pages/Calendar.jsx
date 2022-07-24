@@ -19,7 +19,7 @@ const Dropdown = ({ color }) => {
     ? (bgColor = "bgblue")
     : (bgColor = "bg-" + color + "-500");
   return (
-  <><img src={Bottom} alt='students using laptop together' className='sticky top-0 w-full h-40' /> 
+  <><img src={Bottom} alt='students using laptop together' className='mt-10 md:mt-14 top-0 w-full h-40 md:h-96' /> 
     <div className=" pt-2 w-full flex flex-wrap">
       <div className=" w-full  px-4">
         <div className=" relative inline-flex align-middle w-full">
@@ -64,7 +64,7 @@ const Dropdown = ({ color }) => {
       <div className='nav rblue h-32'>'Info-bar here'</div>
       <div class="text-left my-3 px-5 text-lg rblue">1.. 2.. 3.. That's it!</div>
       <div class="mb-3 px-5 text-sm text-left indent-6 rblue">Lorem ipsum dolor sit amet consectet sit amet consectetur adipisicin sit amet consectetur adipisicinur adipisicing elitsit amet consectetur adipisicing elit. A odit voluptatum impedit. Debitis, voluptates.</div>
-      <img src={Grad} alt='graduates throwing graduation caps' className='sticky bottom-0 w-full h-40' />
+      <img src={Grad} alt='graduates throwing graduation caps' className='sticky bottom-0 w-full h-40 md:h-96 mb-10 md:mb-13' />
     </div></>
   );
 };

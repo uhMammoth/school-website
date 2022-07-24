@@ -23,6 +23,9 @@
 .nav{
   border: .5px solid #FF8200
 }
+.blue{
+  background-color: #003594;
+}
 
 /*  desktop  */
 .App {
