@@ -17,14 +17,14 @@ const Calendar = ({ showDetailsHandle }) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   const changeWeekHandle = (btnType) => {
-    //console.log("current week", currentWeek);
+    // console.log("current week", currentWeek);
     if (btnType === "prev") {
-      //console.log(subWeeks(currentMonth, 1));
+      // console.log(subWeeks(currentMonth, 1));
       setCurrentMonth(subWeeks(currentMonth, 1));
       setCurrentWeek(getWeek(subWeeks(currentMonth, 1)));
     }
     if (btnType === "next") {
-      //console.log(addWeeks(currentMonth, 1));
+      // console.log(addWeeks(currentMonth, 1));
       setCurrentMonth(addWeeks(currentMonth, 1));
       setCurrentWeek(getWeek(addWeeks(currentMonth, 1)));
     }
@@ -66,8 +66,7 @@ const Calendar = ({ showDetailsHandle }) => {
   const renderCells = () => {
     const startDate = startOfWeek(currentMonth, { weekStartsOn: 1});
     const endDate = sub(lastDayOfWeek(currentMonth, { weekStartsOn: 1 }), {days: 2});
-    console.log(endDate)
-    console.log(startDate)
+  
     const dateFormat = "d";
     const rows = [];
     let days = [];

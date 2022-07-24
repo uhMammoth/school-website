@@ -26,6 +26,7 @@ const NavBar = () => {
             <ul className={!nav? 'hidden':'opacity-70 border-4 mt-10 border-orange-600 text-blue-800 w-full top-0 bg-yellow-50 absolute flex justify-between'}>
                 <Link className=' w-full h-full font-light text-xl p-2 hover:bg-blue-200'  to='/'>Home</Link>
                 <Link className=' w-full h-full font-light text-xl p-2 hover:bg-blue-200'  to='/login'>LogIn</Link>
+                <Link className=' w-full h-full font-light text-xl p-2 hover:bg-blue-200'  to='/page'>Page</Link>
                 <Link className=' w-full h-full font-light text-xl p-2 hover:bg-blue-200'  to='/counselor'>Counselor</Link>
                 <Link className=' w-full h-full font-light text-xl p-2 hover:bg-blue-200'  to='/contact'>Contact</Link>
             </ul>    
