@@ -17,7 +17,7 @@ import Navbar from './components/NavBar';
 import Footer from './components/Footer';
 import Signup from './pages/Signup';
 import LogIn from './pages/LogIn';
-import Page from './pages/Page';
+import Appointments from './pages/Appointments';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -47,7 +47,7 @@ function App() {
           <Route path="/" element={<ImageSlider slides={SliderData} />} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/login" element={<LogIn />} />
-          <Route path="/page" element={<Page />} />
+          <Route path="/appointments" element={<Appointments />} />
           <Route path="/counselor" element={<Home />} />
           <Route path="/contact" element={<Contacts />} />
         </Routes>
