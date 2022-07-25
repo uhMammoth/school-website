@@ -15,7 +15,7 @@ const Calendar = ({ showDetailsHandle }) => {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [currentWeek, setCurrentWeek] = useState(getWeek(currentMonth));
   const [selectedDate, setSelectedDate] = useState(new Date());
-
+  console.log(currentWeek);
   const changeWeekHandle = (btnType) => {
     // console.log("current week", currentWeek);
     if (btnType === "prev") {
@@ -54,6 +54,7 @@ const Calendar = ({ showDetailsHandle }) => {
     const dateFormat = "EEE";
     const days = [];
     let startDate = startOfWeek(currentMonth, { weekStartsOn: 1 });
+    
     for (let i = 0; i < 5; i++) {
       days.push(
         <div className="col col-center" key={i}>
@@ -66,7 +67,10 @@ const Calendar = ({ showDetailsHandle }) => {
   const renderCells = () => {
     const startDate = startOfWeek(currentMonth, { weekStartsOn: 1});
     const endDate = sub(lastDayOfWeek(currentMonth, { weekStartsOn: 1 }), {days: 2});
-  
+   
+    //--------------------------------------------------
+    console.log(startDate+''+endDate);
+
     const dateFormat = "d";
     const rows = [];
     let days = [];

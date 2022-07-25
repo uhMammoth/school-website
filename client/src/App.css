@@ -283,6 +283,10 @@
 
 }
 
+.is-active {
+  color:red;
+}
+
 @media (min-width: 1024px) {
   .right-arrow {
     position: absolute;
@@ -296,3 +300,4 @@
     top: 25%
   }
 }
+
