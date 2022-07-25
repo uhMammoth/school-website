@@ -9,7 +9,6 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import { SliderData } from './components/SliderData';
 import ImageSlider from './pages/ImageSlider';
 import Home from './pages/Home';
 import Contacts from './pages/Contacts';
@@ -44,7 +43,7 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<ImageSlider slides={SliderData} />} />
+          <Route path="/" element={<ImageSlider />} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/dashboard" element={<Dashboard />} />

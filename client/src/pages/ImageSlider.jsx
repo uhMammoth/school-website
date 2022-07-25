@@ -8,11 +8,11 @@ import {COUNSELORS} from '../utils/queries';
 const ImageSlider = () => {
     const {data} = useQuery(COUNSELORS);
     const counselors = data?.counselors || {};
+    console.log(counselors);
     const [current, setCurrent] = useState(0)
     const length = counselors.length;
 
     const nextSlide = () => {
-        console.log(current);
         setCurrent(current === length - 1 ? 0 : current + 1);
     };
 
