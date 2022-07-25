@@ -29,7 +29,7 @@ const resolvers = {
           .select('-__v -password')
           .populate('appointments');
         return UserData;
-      } else if(!context) {
+      } else {
         const UserData = await User.find()
           .where('counselor').equals(true)
           .select('-__v -password -scheduleDays -scheduleTimes -appointments');
