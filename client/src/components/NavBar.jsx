@@ -14,7 +14,7 @@ const NavBar = () => {
             <ul>
                 <Link className=' w-full h-full font-semibold text-xl p-2 hover:text-blue-700'  to='/'>Home</Link>
                 <Link className=' w-full h-full font-semibold text-xl p-2 hover:text-blue-700'  to='/login'>Login</Link>
-                <Link className=' w-full h-full font-semibold text-xl p-2 hover:text-blue-700'  to='/page'>Page</Link>
+                <Link className=' w-full h-full font-semibold text-xl p-2 hover:text-blue-700'  to='/appointments'>Appointments</Link>
                 <Link className=' w-full h-full font-semibold text-xl p-2 hover:text-blue-700'  to='/counselor'>Counselor</Link>
                 <Link className=' w-full h-full font-semibold text-xl p-2 hover:text-blue-700'  to='/contact'>Contact</Link>
             </ul>    
