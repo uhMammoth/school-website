@@ -32,7 +32,8 @@ const resolvers = {
       } else {
         const UserData = await User.find()
           .where('counselor').equals(true)
-          .select('-__v -password -scheduleDays -scheduleTimes -appointments');
+          .select('-__v -password')
+          .populate('appointments')
         return UserData;
       }
     },
