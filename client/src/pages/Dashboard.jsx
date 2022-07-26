@@ -37,21 +37,23 @@ const Dashboard = () => {
     <div className='flex flex-wrap justify-center h-screen items-center bg-slate-300'>
       <form>
       <div className='w-full flex justify-center self-end'>
-      <select className='mb-10'>
+      <select className='mb-10 w-fit'>
       {appointments.map((counselor) => (
               <option key={counselor.name}>
                 {counselor.name}
               </option>))}
       </select>
       </div>
+      <div className='flex justify-center'>
       <Calendar showDetailsHandle={showDetailsHandle} />
+      </div>
       <div className='bg-white '>
-        <div className='flex justify-center items-center'>
+        <div className='flex items-center'>
             {appointments.map((time) => (
               <div className={`${currentTime.time === time.time ? 'is-active' : 'not-active'}`} key={time.time}>
                 <span onClick={() => {setCurrentTime(time)}} >{time.time}</span>
               </div>))}
-              <select className='mb-10 flex m-auto my-4'>
+              <select className='mb-10 flex items-center my-4'>
                 <option value='subject' selected hidden>Subject</option>
                 {subjects.map((subject) => (
               <option key={subject}>
