@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState} from 'react';
 import Bottom from '../assets/calenderbottom.jpg';
 import { createPopper } from "@popperjs/core";
 import Grad from '../assets/grad.jpg'
 import sidebar from '../assets/sidebar.jpg'
-
-
+import Calendar from '../components/Calendar';
+import UserAppt from '../components/UserAppt';
 
 /*  dropdown bar  */
 const Dropdown = ({ color }) => {
@@ -21,6 +21,28 @@ const Dropdown = ({ color }) => {
   color === "white"
     ? (bgColor = "bgblue")
     : (bgColor = "bg-" + color + "-500");
+
+    const [showDetails, setShowDetails] = useState(false);
+    const [data, setData] = useState(null);
+  
+    const [appointments] = useState([
+      { name:'person 1', time: '3:00pm' },
+      { name:'person 2', time: '3:30pm' },
+      { name:'person 3', time: '4:00pm' },
+      { name:'person 3', time: '4:30pm' },
+      { name:'person 3', time: '5:00pm' },
+    ]);
+  
+    const subjects = ['a', 'b'];
+  
+    const [currentTime, setCurrentTime] = useState(appointments[0]);
+  
+    const showDetailsHandle = (dayStr) => {
+      setData(dayStr);
+      setShowDetails(true);
+    };
+
+
   return (
   
   
@@ -72,8 +94,44 @@ const Dropdown = ({ color }) => {
     </div>
 
     <div className='nav '>
-      <div className='nav rblue h-40 lg:h-72'>'Calender here'</div>
-      <div className='nav rblue h-32 lg:h-72'>'Info-bar here'</div>
+      <div className='nav rblue h-60 lg:h-80'>
+        
+      <div className='h-full bg-slate-300 py-2'>
+      <form>
+      {/* <div className='w-full flex justify-center self-end'>
+      <select className='mb-10'>
+      {appointments.map((counselor) => (
+              <option key={counselor.name}>
+                {counselor.name}
+              </option>))}
+      </select>
+      </div> */}
+      <div className='flex justify-between px-20 h-full'>
+      <Calendar showDetailsHandle={showDetailsHandle} />
+      <UserAppt />
+      </div>
+        </form>
+      </div>
+      
+      </div>
+      <div className='nav rblue h-32 lg:h-72'>
+      <div className='bg-slate-300 h-full'>
+        <div className=''>
+            {appointments.map((time) => (
+              <div className={`lex-wrap flex flex-col px-40 pt-2 ${currentTime.time === time.time ? 'is-active' : 'not-active'}`} key={time.time}>
+                <span className='cursor-pointer border-2 border-black w-fit rounded-md' onClick={() => {setCurrentTime(time); console.log(time)}} >{time.time}</span>
+              </div>))}
+              <select className='mb-10 my-4'>
+                <option value='subject' selected hidden>Subject</option>
+                {subjects.map((subject) => (
+              <option key={subject}>
+                {subject}
+              </option>))}
+              </select>
+              <button type='submit'>Submit</button>
+          </div>
+        </div>
+      </div>
       <div class="text-left my-3 px-5 text-lg rblue lg:text-4xl">1.. 2.. 3.. That's it!</div>
       <div class="mb-3 px-5 text-sm text-left indent-6 rblue lg:text-xl">Lorem ipsum dolor sit amet consectet sit amet consectetur adipisicin sit amet consectetur adipisicinur adipisicing elitsit amet consectetur adipisicing elit. A odit voluptatum impedit. Debitis, voluptates.</div>
       <img src={Grad} alt='graduates throwing graduation caps' className=' bottom-0 w-full h-40 md:h-96 mb-10 md:mb-13' />
