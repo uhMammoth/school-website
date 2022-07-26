@@ -5,6 +5,7 @@ import {useQuery} from '@apollo/client';
 import {COUNSELORS} from '../utils/queries';
 import pen1 from '../assets/left.jpg'
 import pen2 from '../assets/2pen.jpg'
+import bottom from '../assets/counselorb.jpg'
 
 
 const ImageSlider = () => {
@@ -42,15 +43,15 @@ const ImageSlider = () => {
                     <div className={index === current ? 'slide active' : 'slide'} key={index}>
                         {index === current && (
                         <><div className='  px-10 pt-72 md:px-32 md:pt-16 rblue lg:pt-12 lg:w-[700px]'>
-                            <h2 className='text-3xl pb-4 md:pb-4 text-center font-thin lg:text-5xl'>{counselor.name}</h2>
+                            <h2 className='text-3xl pb-4 md:pb-4 text-center font-thin lg:text-5xl'>{slide.name}</h2>
                             <img src={require(`../assets/${counselor.imageUrl}`)} alt='' className='mx-auto rounded-full h-44 w-44 md:h-80 md:w-80' />
-                            {/* <h2 className='pt-4 md:pt-4 text-2xl text-center font-thin lg:text-5xl'>Specialty: {counselor.area}</h2>
-                            <h2 className='py-6 md:py-4 w-44 mx-auto text-center font-thin lg:text-2xl'>{counselor.title}</h2>
-                            <h2 className='py-3 leading-relaxed indent-10 text-sm text-left font-thin lg:text-xl'>{counselor.lorem}</h2>
-                            <h2 className='pb-3 leading-relaxed indent-10 text-sm text-left font-thin lg:text-xl'>{counselor.lorem}</h2> */}
+                            <h2 className='pt-4 md:pt-4 text-2xl text-center font-thin lg:text-5xl'>Specialty: {slide.area}</h2>
+                            <h2 className='py-6 md:py-4 w-44 mx-auto text-center font-thin lg:text-2xl'>{slide.title}</h2>
+                            <h2 className='py-3 leading-relaxed indent-10 text-sm text-left font-thin lg:text-xl'>{slide.lorem}</h2>
+                            <h2 className='pb-3 leading-relaxed indent-10 text-sm text-left font-thin lg:text-xl'>{slide.lorem}</h2>
 
                         </div>
-                        <img src={require(`../assets/${counselor.imageUrl}`)} alt='counselor helping student' className='w-full h-36 md:h-80 pt-2 md:pt-6' />
+                        <img src={bottom} alt='counselor helping student' className='w-full h-36 md:h-80 pt-2 md:pt-6' />
                         <div className="  w-full sm:mb-2 pb-12 bottom-0">  
                             <button type="button" class=" nav bgblue yellow w-full font-bold uppercase text-sm px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150">Schedule now</button>                        
                         </div></>
