@@ -1,5 +1,10 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 
 import {
   ApolloClient,
@@ -15,7 +20,6 @@ import Contacts from './pages/Contacts';
 import Navbar from './components/NavBar';
 import Footer from './components/Footer';
 import LogIn from './pages/LogIn';
-import Calendar from './pages/Calendar';
 import Dashboard from './pages/Dashboard';
 
 const httpLink = createHttpLink({
@@ -48,8 +52,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/counselor" element={<Counselors />} />
           <Route path="/contact" element={<Contacts />} />
-          <Route path="*" element={<Navigate replace to="/"/>}/>
-          <Route path="/calendar" element={<Calendar />} />
+          <Route path="*" element={<Navigate replace to="/" />} />
         </Routes>
         <Footer />
       </Router>

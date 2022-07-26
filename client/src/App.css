@@ -306,8 +306,9 @@
   clip-path: polygon(0 0,100% 0, 100% 100%,0 90%);
 }
 
-.is-active {
-  color:red;
+.is-active span{
+  color: black;
+  background-color: orange;
 }
 
 @media (min-width: 1024px) {

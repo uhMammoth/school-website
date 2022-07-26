@@ -29,7 +29,6 @@ const NavBar = () => {
                     </>
                 ) }
                 <Link className='nav w-full h-full font-light text-xl p-2'  to='/counselor'>Counselor</Link>
-                <Link className='nav w-full h-full font-light text-xl p-2'  to='/calendar'>Calendar</Link>
                 <Link className='nav w-full h-full font-light text-xl p-2'  to='/contact'>Contact</Link>
             </ul>    
             
@@ -47,7 +46,6 @@ const NavBar = () => {
                     <Link className=' w-full h-full font-light text-xl p-2'  to='/login'>Login</Link>
                 </>) }
                 <Link className=' w-full h-full font-light text-xl p-2'  to='/counselor'>Counselor</Link>
-                <Link className=' w-full h-full font-light text-xl p-2'  to='/calendar'>Calendar</Link>
                 <Link className=' w-full h-full font-light text-xl p-2'  to='/contact'>Contact</Link>
             </ul>
 
