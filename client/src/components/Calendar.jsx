@@ -79,10 +79,10 @@ const Calendar = ({ showDetailsHandle }) => {
         days.push(
           <div
             className={`col cell ${
-              isSameDay(day, new Date())
+              isSameDay(day, selectedDate)
+                ? "selected" 
+                : isSameDay(day, new Date())
                 ? "today"
-                : isSameDay(day, selectedDate)
-                ? "selected"
                 : ""
             }`}
             key={day}
@@ -92,7 +92,7 @@ const Calendar = ({ showDetailsHandle }) => {
             }}
           >
             <span className="number">{formattedDate}</span>
-            <span className="bg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span className="bg"></span>
           </div>
         );
         day = addDays(day, 1);
