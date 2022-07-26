@@ -1,6 +1,9 @@
 import React, { useState} from 'react';
 import { SliderData } from '../components/SliderData';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
+import pen1 from '../assets/left.jpg'
+import pen2 from '../assets/2pen.jpg'
+
 
 const ImageSlider = ({ slides }) => {
     const [current, setCurrent] = useState(0)
@@ -17,30 +20,45 @@ const ImageSlider = ({ slides }) => {
 
     return (
     
-        /*  slider  */
-        <section className="slider h-screen w-screen">
+        <section className="lg:grid lg:grid-cols-12 lg:gap-20">
+    
+        <div className='hidden lg:flex lg:col-span-2 lg:h-screen'>
+        <img src={pen1} alt='students hugging staring at the sun' className=' nav m-auto mb-1 lg:h-screen home shadow-lg md:h-80	sm:h-40'/>
+        </div>
+    
+    
+      {/*  mobile  */}  
+      <div className='lg:col-span-6 lg' >
+        <section className="slider h-screen w-screen lg:w-3/4">
             <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide}/> 
             <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide}/>
             {SliderData.map((slide, index) => {  
                 return (
                     <div className={index === current ? 'slide active' : 'slide'} key={index}>
                         {index === current && (
-                        <><div className='  px-10 pt-72 md:px-32 md:pt-16 rblue'>
-                            <h2 className='text-3xl pb-4 md:pb-4 text-center font-thin'>{slide.name}</h2>
+                        <><div className='  px-10 pt-72 md:px-32 md:pt-16 rblue lg:pt-12 lg:w-[700px]'>
+                            <h2 className='text-3xl pb-4 md:pb-4 text-center font-thin lg:text-5xl'>{slide.name}</h2>
                             <img src={slide.image} alt='' className='mx-auto rounded-full h-44 w-44 md:h-80 md:w-80' />
-                            <h2 className='pt-4 md:pt-4 text-2xl text-center font-thin'>Specialty: {slide.area}</h2>
-                            <h2 className='py-6 md:py-4 w-44 mx-auto text-center font-thin'>{slide.title}</h2>
-                            <h2 className='py-3 leading-relaxed indent-10 text-sm text-left font-thin'>{slide.lorem}</h2>
-                            <h2 className='pb-3 leading-relaxed indent-10 text-sm text-left font-thin'>{slide.lorem}</h2>
+                            <h2 className='pt-4 md:pt-4 text-2xl text-center font-thin lg:text-5xl'>Specialty: {slide.area}</h2>
+                            <h2 className='py-6 md:py-4 w-44 mx-auto text-center font-thin lg:text-2xl'>{slide.title}</h2>
+                            <h2 className='py-3 leading-relaxed indent-10 text-sm text-left font-thin lg:text-xl'>{slide.lorem}</h2>
+                            <h2 className='pb-3 leading-relaxed indent-10 text-sm text-left font-thin lg:text-xl'>{slide.lorem}</h2>
 
                         </div>
-                        <img src={slide.img} alt='counselor helping student' className='w-full h-36 md:h-96 pt-2 md:pt-6' />
+                        <img src={slide.img} alt='counselor helping student' className='w-full h-36 md:h-80 pt-2 md:pt-6' />
                         <div className="  w-full sm:mb-2 pb-12 bottom-0">  
                             <button type="button" class=" nav bgblue yellow w-full font-bold uppercase text-sm px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150">Schedule now</button>                        
                         </div></>
                         )}
                     </div>
             )})}    
+        </section>
+        </div>
+        
+        <div className='hidden lg:flex lg:col-span-4 lg:h-screen'>
+        <img src={pen2} alt='students hugging staring at the sun' className=' nav m-auto mb-1 lg:h-screen home shadow-lg md:h-80	sm:h-40'/>
+        </div>
+        
         </section>
     )
 }

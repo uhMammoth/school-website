@@ -2,6 +2,9 @@ import React from 'react'
 import Bottom from '../assets/calenderbottom.jpg';
 import { createPopper } from "@popperjs/core";
 import Grad from '../assets/grad.jpg'
+import sidebar from '../assets/sidebar.jpg'
+
+
 
 /*  dropdown bar  */
 const Dropdown = ({ color }) => {
@@ -19,7 +22,16 @@ const Dropdown = ({ color }) => {
     ? (bgColor = "bgblue")
     : (bgColor = "bg-" + color + "-500");
   return (
-  <><img src={Bottom} alt='students using laptop together' className='mt-10 md:mt-14 top-0 w-full h-40 md:h-96' /> 
+  
+  
+    <section className="lg:grid lg:grid-cols-12 lg:gap-3">
+    
+    <div className='hidden lg:flex lg:col-span-4 lg:h-screen'>
+    <img src={sidebar} alt='students hugging staring at the sun' className=' nav m-auto mb-1 lg:h-screen home shadow-lg md:h-80	sm:h-40'/>
+    </div>
+
+    <div className='lg:col-span-8 lg:w-[1200px]'>
+    <img src={Bottom} alt='students using laptop together' className='mt-10 md:mt-14 top-0 w-full h-40 md:h-96' /> 
     <div className=" pt-2 w-full flex flex-wrap">
       <div className=" w-full  px-4">
         <div className=" relative inline-flex align-middle w-full">
@@ -60,12 +72,12 @@ const Dropdown = ({ color }) => {
     </div>
 
     <div className='nav '>
-      <div className='nav rblue h-40'>'Calender here'</div>
-      <div className='nav rblue h-32'>'Info-bar here'</div>
-      <div class="text-left my-3 px-5 text-lg rblue">1.. 2.. 3.. That's it!</div>
-      <div class="mb-3 px-5 text-sm text-left indent-6 rblue">Lorem ipsum dolor sit amet consectet sit amet consectetur adipisicin sit amet consectetur adipisicinur adipisicing elitsit amet consectetur adipisicing elit. A odit voluptatum impedit. Debitis, voluptates.</div>
-      <img src={Grad} alt='graduates throwing graduation caps' className='sticky bottom-0 w-full h-40 md:h-96 mb-10 md:mb-13' />
-    </div></>
+      <div className='nav rblue h-40 lg:h-72'>'Calender here'</div>
+      <div className='nav rblue h-32 lg:h-72'>'Info-bar here'</div>
+      <div class="text-left my-3 px-5 text-lg rblue lg:text-4xl">1.. 2.. 3.. That's it!</div>
+      <div class="mb-3 px-5 text-sm text-left indent-6 rblue lg:text-xl">Lorem ipsum dolor sit amet consectet sit amet consectetur adipisicin sit amet consectetur adipisicinur adipisicing elitsit amet consectetur adipisicing elit. A odit voluptatum impedit. Debitis, voluptates.</div>
+      <img src={Grad} alt='graduates throwing graduation caps' className=' bottom-0 w-full h-40 md:h-96 mb-10 md:mb-13' />
+    </div></div></section>
   );
 };
 
