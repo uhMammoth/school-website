@@ -9,13 +9,13 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import ImageSlider from './pages/ImageSlider';
+import Counselors from './pages/ImageSlider';
 import Home from './pages/Home';
 import Contacts from './pages/Contacts';
 import Navbar from './components/NavBar';
 import Footer from './components/Footer';
-import Signup from './pages/Signup';
 import LogIn from './pages/LogIn';
+import Calendar from './pages/Calendar';
 import Dashboard from './pages/Dashboard';
 
 const httpLink = createHttpLink({
@@ -43,13 +43,13 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<ImageSlider />} />
-          <Route path="/Signup" element={<Signup />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/counselor" element={<Home />} />
+          <Route path="/counselor" element={<Counselors />} />
           <Route path="/contact" element={<Contacts />} />
           <Route path="*" element={<Navigate replace to="/"/>}/>
+          <Route path="/calendar" element={<Calendar />} />
         </Routes>
         <Footer />
       </Router>
