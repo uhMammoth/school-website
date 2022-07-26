@@ -9,6 +9,8 @@ import pen2 from '../assets/2pen.jpg'
 
 const ImageSlider = () => {
     const {data} = useQuery(COUNSELORS);
+    console.log(data);
+    console.log(COUNSELORS);
     const counselors = data?.counselors || {};
     console.log(counselors);
     const [current, setCurrent] = useState(0)

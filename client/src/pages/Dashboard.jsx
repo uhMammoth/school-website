@@ -11,15 +11,19 @@ import {COUNSELORS} from '../utils/queries';
 /*  dropdown bar  */
 export default function Dashboard() {
 
-    // const {counselorUser} = useQuery(COUNSELORS);
-    // const counselors = counselorUser?.counselors || {};
-    // console.log(counselors);
+    const {data} = useQuery(COUNSELORS);
+    const counselors = data?.counselors || {};
+    console.log(counselors);
 
     const [showDetails, setShowDetails] = useState(false);
-    const [data, setData] = useState(null);
+    const [setData] = useState(null);
   
-    // const [currentTime, setCurrentTime] = useState(counselors.time[0]);
+    // const [currentTime, setCurrentTime] = useState(counselors.scheduleTimes);
   
+    if (!Array.isArray(counselors) || counselors.length <= 0) {
+      return null;
+  }
+
     const showDetailsHandle = (dayStr) => {
       setData(dayStr);
       setShowDetails(true);
@@ -43,10 +47,10 @@ export default function Dashboard() {
       <div className='bg-slate-300'>
       <form>
     <select className='pb-4 w-full flex justify-center self-end bg-blue-500 text-center text-white'>
-      {/* {counselors.map((counselor) => (
+      {counselors.map((counselor) => (
               <option className='bg-white text-black' key={counselor.name}>
                 {counselor.name}
-              </option>))} */}
+              </option>))}
       </select>
       <div className='flex justify-between mx-20'>
       <Calendar showDetailsHandle={showDetailsHandle} />
@@ -74,8 +78,8 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
-      <div class="text-left my-3 px-5 text-lg rblue lg:text-4xl">1.. 2.. 3.. That's it!</div>
-      <div class="mb-3 px-5 text-sm text-left indent-6 rblue lg:text-xl">Lorem ipsum dolor sit amet consectet sit amet consectetur adipisicin sit amet consectetur adipisicinur adipisicing elitsit amet consectetur adipisicing elit. A odit voluptatum impedit. Debitis, voluptates.</div>
+      <div className="text-left my-3 px-5 text-lg rblue lg:text-4xl">1.. 2.. 3.. That's it!</div>
+      <div className="mb-3 px-5 text-sm text-left indent-6 rblue lg:text-xl">Lorem ipsum dolor sit amet consectet sit amet consectetur adipisicin sit amet consectetur adipisicinur adipisicing elitsit amet consectetur adipisicing elit. A odit voluptatum impedit. Debitis, voluptates.</div>
       <img src={Grad} alt='graduates throwing graduation caps' className=' bottom-0 w-full h-40 md:h-96 mb-10 md:mb-13' />
     </div></div></section>
   );
