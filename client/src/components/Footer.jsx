@@ -7,34 +7,27 @@ import iimage from '../assets/iimage.jpg'
 const Footer = () => {
     const [nav, setNav] = useState(false)
     const handleClick = () => setNav(!nav)
-
     return (
-        <div className='fixed bottom-0 w-full h-16 flex justify-center items-center' >
-            {/* Desktop */}
-            <div className='hidden lg:flex bg-white w-full h-full shadow-[0_-15px_15px_-15px] shadow-slate-400 items-center justify-center'>
-                <AiFillFacebook className='text-6xl mx-3 text-blue-800 hover:text-orange-500'/>
-                <AiFillInstagram className='text-6xl mx-3 text-blue-800 hover:text-orange-500'/>
-                <AiFillTwitterCircle className='text-6xl mx-3 text-blue-800 hover:text-orange-500'/>
-                <FaYoutube className='text-6xl mx-3 text-blue-800 hover:text-orange-500'/>
+        
+        /*  mobile i-button/hidden  */
+        <div className='md fixed bottom-0 w-full nav h-9 md:h-11 flex blue' >
+            <div onClick={handleClick}className='2xl:hidden z-10 mx-auto pt-2 text-2xl orange'>
+                {!nav ? <BsInfoCircle /> : <FaTimes />} 
             </div>
-            {/* Mobile */}
-            <div onClick={handleClick}className='lg:hidden z-10 pb-2 text-2xl text-orange-500'>
-                {!nav ? <BsInfoCircle /> : <FaTimes />}
-            </div>
-            <ul className={!nav? 'hidden': 'opacity-90 border-4 border-orange-600 rounded-t-2xl absolute bottom-0 w-[330px] h-auto bg-yellow-50 flex flex-col justify-center items-center'}>
-                <img src={iimage} alt='' className='mt-4 w-full iimage'/>
-                <div className='text-3xl mt-6 text-blue-700 font-bold'>Lorem Ipsum School</div>
-                <div className='text-xl mt-2 text-blue-700 font-bold'>Counseling</div>
-                <div className='text-xl mt-6 text-black' >Hours: 7:00 AM - 7:00 PM</div>
-                <div className='text-xl mt-6 text-black' >Phone: 555 555 2042</div>
-                <div className='text-xl mt-2 text-black'>Fax: 555 555 2048</div>
-                <div className='text-xl mt-6 text-black'>5150 Ole Town Td, suite 404</div>
-                <div className='text-xl mt-2 mb-10 text-black underline underline-offset-8'>Lorem Ipsum, CA 95550 </div>
-                <div className='flex m-2 mb-16'>
-                    <AiFillFacebook className='text-6xl mx-3 text-blue-800'/>
-                    <AiFillInstagram className='text-6xl mx-3 text-blue-800'/>
-                    <AiFillTwitterCircle className='text-6xl mx-3 text-blue-800'/>
-                    <FaYoutube className='text-6xl mx-3 text-blue-800'/>
+            <ul className={!nav? 'hidden': 'md nav rounded-t-xl absolute bottom-0 sm:w-[320px] md:w-1/2 rblue h-auto  bg-white flex flex-col justify-center items-center'}>
+                <img src={iimage} alt='students happy hanging out' className='mt-4 w-full iimage '/>
+                <div className='font-thin text-3xl sm:mt-6 '>Lorem Ipsum School</div>
+                <div className='font-thin text-lg sm:mt-2 '>Counseling Deparment</div>
+                <div className='font-thin text-lg sm:mt-6 ' >Hours: 7:00 AM - 7:00 PM</div>
+                <div className='font-thin text-lg sm:mt-6 ' >Phone: 909 555 2042</div>
+                <div className='font-thin text-lg sm:mt-2 '>Fax: 909 555 2048</div>
+                <div className='font-thin text-lg sm:mt-6 '>5150 Ole Town Road, suite 404</div>
+                <div className='font-thin text-lg sm:mt-2 sm:mb-10'>Lorem Ipsum, CA 95555 </div>
+                <div className='flex sm:m-2 sm:mb-16'>
+                    <AiFillFacebook className='text-5xl sm:mx-2 rblue'/>
+                    <AiFillInstagram className='text-5xl sm:mx-2 rblue'/>
+                    <AiFillTwitterCircle className='text-5xl sm:mx-2 rblue'/>
+                    <FaYoutube className='text-5xl sm:mx-2 rblue'/>
                 </div>
             </ul>    
         </div>

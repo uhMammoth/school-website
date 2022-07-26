@@ -1,0 +1,54 @@
+[
+    { 
+        "name" : "Emily",
+        "email" : "Molly48_Waters59@hotmail.com",
+        "imageUrl" : "1.jpg",
+        "password" : "kGjRfUNWUIRwfS_",
+        "scheduleDays" : "Mon Tue Wed",
+        "scheduleTimes" : "3:00PM 3:30PM",
+        "counselor" : true
+    },
+    { 
+        "name" : "John",
+        "email" : "john59@hotmail.com",
+        "imageUrl" : "2.jpg",
+        "password" : "%kGjRfUNWUIRwfS_",
+        "scheduleDays" : "Mon Tue Wed",
+        "scheduleTimes" : "3:00PM 3:30PM",
+        "counselor" : true
+    },
+    { 
+        "name" : "Steve",
+        "email" : "steve59@hotmail.com",
+        "imageUrl" : "3.jpg",
+        "password" : "g^kGjRfUNWUIRwfm",
+        "scheduleDays" : "Mon Tue Wed",
+        "scheduleTimes" : "3:00PM 3:30PM",
+        "counselor" : true
+    },
+    { 
+        "name" : "Paul",
+        "email" : "paul59@hotmail.com",
+        "imageUrl" : "4.jpg",
+        "password" : "564&1kGjRfUNWUIRw",
+        "scheduleDays" : "Mon Tue Wed",
+        "scheduleTimes" : "3:00PM 3:30PM",
+        "counselor" : true
+    },
+    { 
+        "name" : "Charlotte",
+        "email" : "charlotee59@hotmail.com",
+        "imageUrl" : "5.jpg",
+        "password" : "$shdslkjRfUNWUIRwfS_",
+        "scheduleDays" : "Mon Tue Wed",
+        "scheduleTimes" : "3:00PM 3:30PM",
+        "counselor" : true
+    },
+    {
+        "name" : "apple",
+        "email" : "apple59@hotmail.com",
+        "imageUrl" : "",
+        "password" : "zsdf41g54FSD%",
+        "counselor" : false 
+    }   
+]

@@ -1,3 +1,33 @@
+/*  school colors  */
+.rblue {
+  color: #003594;
+}
+.yellow {
+  color: #FFD100;
+}
+.orange {
+  color: #FF8200;
+}
+.orangeyellow {
+  color: #FFA300;
+}
+.covid{
+  background-color: #FFD100;
+}
+.bgblue{
+  background-color: #003594;
+}
+.btn {
+  border: .5px solid #003594;
+}
+.nav{
+  border: .5px solid #FF8200
+}
+.blue{
+  background-color: #003594;
+}
+
+/*  desktop  */
 .App {
   text-align: center;
 }
@@ -110,6 +140,7 @@
   background: var(--neutral-color);
   border: 1px solid orange;
   border-radius: 20px;
+  min-width: 650px;
 }
 
 .calendar .header {
@@ -158,19 +189,14 @@
   background: var(--neutral-color);
   font-size: 1.5em;
 }
+.calendar .body .today {
+  border: 2px solid #35ce4f;
+}
 
 .calendar .body .selected {
-  border-radius: 10px;
-  border: 2px solid var(--main-color);
-  border-image-slice: 1;
-  border-radius: 10px;
+  border: 2px solid var(--main-color) !important;
 }
 
-.calendar .body .today {
-  border: 2px solid transparent;
-  border-image: linear-gradient(45deg, #ff1a79 0%, #eb82b3 40%);
-  border-image-slice: 1;
-}
 
 .calendar .body .row {
   border-bottom: 1px solid gray;
@@ -201,6 +227,11 @@
   pointer-events: none;
 }
 
+.bg {
+  content: '&nbsp;';
+  width: 100px;
+}
+
 .calendar .body .cell .bg {
   font-weight: 700;
   line-height: 1;
@@ -208,6 +239,11 @@
   font-size: 8em;
   letter-spacing: -0.07em;
   border-radius: 10px;
+}
+
+.calendar .body .cell.today .bg {
+  background-color: #1cad34;
+  opacity: 0.2;
 }
 
 .calendar .body .cell:hover .bg,
@@ -220,67 +256,58 @@
   border-radius: 10px;
 }
 
-.calendar .body .cell.today .bg {
-  background-color: #eb82b3;
-  opacity: 0.2;
+.calendar .body .cell .not-available {
+  
 }
+
 
 .calendar .body .col {
   flex-grow: 0;
   flex-basis: calc(100% / 5);
 }
 
-.bg {
-  color: transparent;
-}
-/*  slider */
+/*  slider  */
 .slider {
   position: relative;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-
-
 .right-arrow {
   position: absolute;
   top: 50%;
   right: 32px;
-  font-size: 3rem;
-  color: #000;
+  font-size: 30px;
+  color: #FF8200;
   z-index: 10;
   cursor: pointer;
   user-select: none;
 }
-
 .left-arrow {
   position: absolute;
   top: 50%;
   left: 32px;
-  font-size: 3rem;
-  color: #000;
+  font-size: 30px;
+  color: #FF8200;
   z-index: 10;
   cursor: pointer;
   user-select: none;
 }
-
 .slide {
   opacity: 0;
   transition-duration: 1s ease;
 }
-
 .slide.active {
   opacity: 1;
   transition-duration: 1s;
   transform: scale(1.1);
 }
-
 .iimage {
-
   clip-path: polygon(0 0,100% 0, 100% 100%,0 90%);
+}
 
+.is-active {
+  color:red;
 }
 
 @media (min-width: 1024px) {
@@ -296,3 +323,4 @@
     top: 25%
   }
 }
+

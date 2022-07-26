@@ -5,8 +5,7 @@ import Four from '../assets/4.jpg';
 import Five from '../assets/5.jpg';
 import Bottom from '../assets/counserlorb.jpg';
 
-
-
+/*  slider data  */ 
 export const SliderData = [
     {
         id: '1',
@@ -14,7 +13,7 @@ export const SliderData = [
         image: One,
         area: "Academic Counseling",
         title: `"Start building towards the future."`,
-        lorem: 'lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dol',
+        lorem: 'lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dolUt enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dol',
         img: Bottom 
     },
     {
@@ -22,8 +21,8 @@ export const SliderData = [
         name: 'Michelle Hamn',
         image: Two,
         area: "Mental Health Counseling",
-        title: `"It is never too late."`,
-        lorem: 'lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dol',
+        title: `"It is never too late, to begin."`,
+        lorem: 'lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dolUt enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dol',
         img: Bottom 
     },    
     {
@@ -32,16 +31,16 @@ export const SliderData = [
         image: Three,
         area: "Addiction Counseling",
         title: `"Everyone can use a helping hand."`,
-        lorem: 'lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dol',
+        lorem: 'lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dolUt enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dol',
         img: Bottom   
     },
     {
         id: '4',
         name: 'Marc Nguyenn',
         image: Four,        
-        area: "Career Counseling",
+        area: "Career Goal Counseling",
         title: `"Your choices today impacts your future."`,
-        lorem: 'lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dol',
+        lorem: 'lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dolUt enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dol',
         img: Bottom     
     },    
     {
@@ -50,7 +49,7 @@ export const SliderData = [
         image: Five,
         area: "Academic Counseling",
         title: `"Take the right class that matter."`,
-        lorem: 'lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dol',
+        lorem: 'lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dolUt enim adipisicing    elit, sed do eiusmod tempor incididunt ut labore et dol',
         img: Bottom 
     },    
 ]
