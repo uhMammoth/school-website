@@ -1,75 +1,83 @@
-import React, {useState} from 'react';
-import { Navigate } from 'react-router-dom';
+import React, { useState} from 'react';
+import Bottom from '../assets/calenderbottom.jpg';
+import { createPopper } from "@popperjs/core";
+import Grad from '../assets/grad.jpg'
+import sidebar from '../assets/sidebar.jpg'
 import Calendar from '../components/Calendar';
-import calAppt from '../utils/calAppt';
-import Details from '../components/Details';
-import {useQuery, useMutation} from '@apollo/client';
-import {QUERY_ME, COUNSELORS} from '../utils/queries';
-import Auth from '../utils/auth';
 import UserAppt from '../components/UserAppt';
+import {useQuery} from '@apollo/client';
+import {COUNSELORS} from '../utils/queries';
 
-const Dashboard = () => {
-  const [showDetails, setShowDetails] = useState(false);
-  const [calData, setCalData] = useState(null);
+/*  dropdown bar  */
+export default function Dashboard() {
 
-  const [appointments] = useState([
-    { name:'person 1', time: '3:00pm' },
-    { name:'person 2', time: '4:00pm' },
-    { name:'person 3', time: '5:00pm' },
-  ]);
-  const subjects = ['a', 'b'];
-  const [currentTime, setCurrentTime] = useState(appointments[0]);
-  // const {counselors} = useQuery(COUNSELORS);
+    // const {counselorUser} = useQuery(COUNSELORS);
+    // const counselors = counselorUser?.counselors || {};
+    // console.log(counselors);
 
-  const {data} = useQuery(QUERY_ME);
-  const user = data?.me || {};
-  console.log(data);
-  if(!Auth.loggedIn()){
-    return (<Navigate replace to='/login'/>);
-  } 
-  // const text = calAppt();
+    const [showDetails, setShowDetails] = useState(false);
+    const [data, setData] = useState(null);
+  
+    // const [currentTime, setCurrentTime] = useState(counselors.time[0]);
+  
+    const showDetailsHandle = (dayStr) => {
+      setData(dayStr);
+      setShowDetails(true);
+    };
 
-  const showDetailsHandle = (dayStr) => {
-    setCalData(dayStr);
-    setShowDetails(true);
-  };
+
   return (
-    <div className='flex flex-wrap justify-center h-screen items-center bg-slate-300'>
+  
+  
+    <section className="lg:grid lg:grid-cols-12 lg:gap-3">
+    
+    <div className='hidden lg:flex lg:col-span-4 lg:h-screen'>
+    <img src={sidebar} alt='students hugging staring at the sun' className=' nav m-auto mb-1 lg:h-screen home shadow-lg md:h-80	sm:h-40'/>
+    </div>
+
+    <div className='lg:col-span-8 lg:w-[1200px]'>
+    <img src={Bottom} alt='students using laptop together' className='mt-10 md:mt-14 top-0 w-full h-40 md:h-96' /> 
+    <div className='nav '>
+      <div className='nav rblue h-60 lg:h-5/6'>
+        
+      <div className='bg-slate-300'>
       <form>
-      <div className='w-full flex justify-center self-end'>
-      <select className='mb-10 w-fit'>
-      {appointments.map((counselor) => (
-              <option key={counselor.name}>
+    <select className='pb-4 w-full flex justify-center self-end bg-blue-500 text-center text-white'>
+      {/* {counselors.map((counselor) => (
+              <option className='bg-white text-black' key={counselor.name}>
                 {counselor.name}
-              </option>))}
+              </option>))} */}
       </select>
-      </div>
-      <div className='flex justify-center'>
+      <div className='flex justify-between mx-20'>
       <Calendar showDetailsHandle={showDetailsHandle} />
+      <UserAppt />
       </div>
-      <div className='bg-white '>
-        <div className='flex items-center'>
-            {appointments.map((time) => (
-              <div className={`${currentTime.time === time.time ? 'is-active' : 'not-active'}`} key={time.time}>
-                <span onClick={() => {setCurrentTime(time)}} >{time.time}</span>
-              </div>))}
-              <select className='mb-10 flex items-center my-4'>
+        </form>
+      </div>
+      
+      </div>
+      <div className='nav rblue h-32 lg:h-72'>
+      <div className='bg-slate-300 h-full'>
+        <div className=''>
+            {/* {counselors.map((counselor) => (
+              <div className={`lex-wrap flex flex-col px-40 pt-2 ${currentTime.time === counselor.time ? 'is-active' : 'not-active'}`} key={counselor.time}>
+                <span className='cursor-pointer border-2 border-black w-fit rounded-md' onClick={() => {setCurrentTime(counselor); console.log(counselor)}} >{counselor.time}</span>
+              </div>))} */}
+              <select className='mb-10 my-4'>
                 <option value='subject' selected hidden>Subject</option>
-                {subjects.map((subject) => (
-              <option key={subject}>
-                {subject}
-              </option>))}
+                <option value='1' selected hidden>1</option>
+                <option value='2' selected hidden>2</option>
+                <option value='3' selected hidden>3</option>
+                <option value='4' selected hidden>4</option>
               </select>
               <button type='submit'>Submit</button>
           </div>
-        {/* <span className='hover:text-blue-500 mx-10'>3:00PM</span>
-        <span className='hover:text-blue-500 mx-10'>4:00PM</span>
-        <span className='hover:text-blue-500 mx-10'>5:00PM</span> */}
         </div>
-        </form>
-      <UserAppt {...user}/>
-    </div>
-  )
-}
+      </div>
+      <div class="text-left my-3 px-5 text-lg rblue lg:text-4xl">1.. 2.. 3.. That's it!</div>
+      <div class="mb-3 px-5 text-sm text-left indent-6 rblue lg:text-xl">Lorem ipsum dolor sit amet consectet sit amet consectetur adipisicin sit amet consectetur adipisicinur adipisicing elitsit amet consectetur adipisicing elit. A odit voluptatum impedit. Debitis, voluptates.</div>
+      <img src={Grad} alt='graduates throwing graduation caps' className=' bottom-0 w-full h-40 md:h-96 mb-10 md:mb-13' />
+    </div></div></section>
+  );
+};
 
-export default Dashboard;
