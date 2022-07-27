@@ -16,10 +16,11 @@ export default function Dashboard() {
     console.log(counselors);
 
     const [showDetails, setShowDetails] = useState(false);
+    const [changeCounselor, setCounselor] = useState(false);
+    const [currentTime, setCurrentTime] = useState(false);
+
     const [setData] = useState(null);
-  
-    // const [currentTime, setCurrentTime] = useState(counselors.scheduleTimes);
-  
+
     if (!Array.isArray(counselors) || counselors.length <= 0) {
       return null;
   }
@@ -28,6 +29,11 @@ export default function Dashboard() {
       setData(dayStr);
       setShowDetails(true);
     };
+
+    const handleSelect = (e) => {
+      const selectedCounselor = (counselors.find(counselor => (counselor._id === e.target.value)));
+      setCounselor(selectedCounselor);
+      }
 
 
   return (
@@ -42,13 +48,13 @@ export default function Dashboard() {
     <div className='lg:col-span-8 lg:w-[1200px]'>
     <img src={Bottom} alt='students using laptop together' className='mt-10 md:mt-14 top-0 w-full h-40 md:h-96' /> 
     <div className='nav '>
-      <div className='nav rblue h-60 lg:h-5/6'>
+      <div className='nav rblue h-60 lg:h-5/6 bg-slate-300'>
         
-      <div className='bg-slate-300'>
       <form>
-    <select className='pb-4 w-full flex justify-center self-end bg-blue-500 text-center text-white'>
+    <select className='pb-4 w-full flex justify-center items-center bg-blue-500 text-center text-white'  onChange={handleSelect}>
+    <option value='Counselor' selected hidden>Choose Counselor</option>
       {counselors.map((counselor) => (
-              <option className='bg-white text-black' key={counselor.name}>
+              <option className='bg-white text-black' key={counselor._id} value={counselor._id}>
                 {counselor.name}
               </option>))}
       </select>
@@ -57,22 +63,22 @@ export default function Dashboard() {
       <UserAppt />
       </div>
         </form>
-      </div>
       
       </div>
       <div className='nav rblue h-32 lg:h-72'>
       <div className='bg-slate-300 h-full'>
         <div className=''>
-            {/* {counselors.map((counselor) => (
-              <div className={`lex-wrap flex flex-col px-40 pt-2 ${currentTime.time === counselor.time ? 'is-active' : 'not-active'}`} key={counselor.time}>
-                <span className='cursor-pointer border-2 border-black w-fit rounded-md' onClick={() => {setCurrentTime(counselor); console.log(counselor)}} >{counselor.time}</span>
-              </div>))} */}
+            {changeCounselor.scheduleTimes?.split(' ').map((time) => (
+              <div className={`lex-wrap flex flex-col px-40 pt-2 ${currentTime === time ? 'is-active' : 'not-active'}`} key={time}>
+                <span className='cursor-pointer border-2 border-black w-fit rounded-md' onClick={() => {setCurrentTime(time);}} >{time}</span>
+              </div>
+              ))}
               <select className='mb-10 my-4'>
                 <option value='subject' selected hidden>Subject</option>
-                <option value='1' selected hidden>1</option>
-                <option value='2' selected hidden>2</option>
-                <option value='3' selected hidden>3</option>
-                <option value='4' selected hidden>4</option>
+                <option value='Schedule'>Schedule Classes</option>
+                <option value='Mental Health'>Mental Health</option>
+                <option value='Chat'>Just Chat</option>
+                <option value='Other'>Other</option>
               </select>
               <button type='submit'>Submit</button>
           </div>
