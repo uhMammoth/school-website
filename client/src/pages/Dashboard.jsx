@@ -67,12 +67,13 @@ export default function Dashboard() {
       </div>
       <div className='nav rblue h-32 lg:h-72'>
       <div className='bg-slate-300 h-full'>
-        <div className=''>
+        <div className='flex justify-center pb-2 bg-white rounded-lg w-2/6 m-auto border-2 border-orange-500'>
             {changeCounselor.scheduleTimes?.split(' ').map((time) => (
-              <div className={`lex-wrap flex flex-col px-40 pt-2 ${currentTime === time ? 'is-active' : 'not-active'}`} key={time}>
+              <div className={`flex px-1 pt-2 bg-transparent ${currentTime === time ? 'is-active' : 'not-active'}`} key={time}>
                 <span className='cursor-pointer border-2 border-black w-fit rounded-md' onClick={() => {setCurrentTime(time);}} >{time}</span>
               </div>
               ))}
+              </div>
               <select className='mb-10 my-4'>
                 <option value='subject' selected hidden>Subject</option>
                 <option value='Schedule'>Schedule Classes</option>
@@ -81,8 +82,7 @@ export default function Dashboard() {
                 <option value='Other'>Other</option>
               </select>
               <button type='submit'>Submit</button>
-          </div>
-        </div>
+              </div>
       </div>
       <div className="text-left my-3 px-5 text-lg rblue lg:text-4xl">1.. 2.. 3.. That's it!</div>
       <div className="mb-3 px-5 text-sm text-left indent-6 rblue lg:text-xl">Lorem ipsum dolor sit amet consectet sit amet consectetur adipisicin sit amet consectetur adipisicinur adipisicing elitsit amet consectetur adipisicing elit. A odit voluptatum impedit. Debitis, voluptates.</div>
