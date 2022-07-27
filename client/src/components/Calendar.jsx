@@ -10,12 +10,13 @@ import {
   subWeeks,
   sub
 } from "date-fns";
+import {compareDates} from '../utils/calAppt';
 
-const Calendar = ({ showDetailsHandle }) => {
+const Calendar = ({ apptHandler, counselor}) => {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [currentWeek, setCurrentWeek] = useState(getWeek(currentMonth));
   const [selectedDate, setSelectedDate] = useState(new Date());
-  console.log(currentWeek);
+  // console.log(currentWeek);
   const changeWeekHandle = (btnType) => {
     // console.log("current week", currentWeek);
     if (btnType === "prev") {
@@ -30,14 +31,13 @@ const Calendar = ({ showDetailsHandle }) => {
     }
   };
 
-  const onDateClickHandle = (day, dayStr) => {
+  const onDateClickHandle = (day) => {
     setSelectedDate(day);
-    showDetailsHandle(dayStr);
+      apptHandler(compareDates(counselor, day));
   };
 
   const renderHeader = () => {
     const dateFormat = "MMM yyyy";
-    // console.log("selected day", selectedDate);
     return (
       <div className="header row flex-middle">
         <div className="col col-start">
@@ -68,17 +68,14 @@ const Calendar = ({ showDetailsHandle }) => {
     const startDate = startOfWeek(currentMonth, { weekStartsOn: 1});
     const endDate = sub(lastDayOfWeek(currentMonth, { weekStartsOn: 1 }), {days: 2});
    
-    //--------------------------------------------------
-    console.log(startDate+''+endDate);
-
     const dateFormat = "d";
     const rows = [];
     let days = [];
     let day = startDate;
     let formattedDate = "";
     while (day <= endDate) {
+      
       for (let i = 0; i < 5; i++) {
-        console.log(day);
         formattedDate = format(day, dateFormat);
         const cloneDay = day;
         days.push(
@@ -92,19 +89,21 @@ const Calendar = ({ showDetailsHandle }) => {
             }`}
             key={day}
             onClick={() => {
-              const dayStr = format(cloneDay, "ccc dd MMM yy");
-              onDateClickHandle(cloneDay, dayStr);
+              onDateClickHandle(cloneDay);
             }}
           >
             <span className="number">{formattedDate}</span>
             <span className="bg"></span>
           </div>
         );
+        
         day = addDays(day, 1);
+        
       }
-
+      
       rows.push(
         <div className="row" key={day}>
+          
           {days}
         </div>
       );

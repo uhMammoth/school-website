@@ -5,7 +5,7 @@
         "imageUrl" : "1.jpg",
         "password" : "kGjRfUNWUIRwfS_",
         "scheduleDays" : "Mon Tue Wed",
-        "scheduleTimes" : "3:00PM 3:30PM",
+        "scheduleTimes" : "12:00 13:00",
         "counselor" : true
     },
     { 
@@ -14,7 +14,7 @@
         "imageUrl" : "2.jpg",
         "password" : "%kGjRfUNWUIRwfS_",
         "scheduleDays" : "Mon Tue Wed",
-        "scheduleTimes" : "12:00PM 12:30PM 1:00PM 1:30PM 2:00PM 2:30PM 3:00PM 3:30PM 4:00PM 4:30PM 5:00PM",
+        "scheduleTimes" : "12:00 14:00 15:00 16:00",
         "counselor" : true
     },
     { 
@@ -23,7 +23,7 @@
         "imageUrl" : "3.jpg",
         "password" : "g^kGjRfUNWUIRwfm",
         "scheduleDays" : "Mon Tue Wed",
-        "scheduleTimes" : "3:00PM 3:30PM",
+        "scheduleTimes" : "9:00 10:00",
         "counselor" : true
     },
     { 
@@ -32,7 +32,7 @@
         "imageUrl" : "4.jpg",
         "password" : "564&1kGjRfUNWUIRw",
         "scheduleDays" : "Mon Tue Wed",
-        "scheduleTimes" : "3:00PM 3:30PM",
+        "scheduleTimes" : "12:00 12:30",
         "counselor" : true
     },
     { 
@@ -41,7 +41,7 @@
         "imageUrl" : "5.jpg",
         "password" : "$shdslkjRfUNWUIRwfS_",
         "scheduleDays" : "Mon Tue Wed",
-        "scheduleTimes" : "3:00PM 3:30PM",
+        "scheduleTimes" : "15:30 16:00",
         "counselor" : true
     },
     {

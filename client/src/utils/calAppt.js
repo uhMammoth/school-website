@@ -1,51 +1,27 @@
-export default function something(counselor){
-    // console.log(counselor);
-    const {scheduleDays, scheduleTimes, reservations} = counselor;
-    const days = scheduleDays.split(' ');
-    const times = scheduleTimes.split(' ');
-    // console.log(days,times)
-
-    return 'blah';
+function compareDates(counselor, cellDate){
+  const object = {
+    date: cellDate,
+    times: [],
+    message: ''
+  }
+  const dayOfWeekName = cellDate.toLocaleDateString('PDT', { weekday: 'short' });// Mon
+  if(!counselor ){
+    object.message = 'Please select a counselor!'
+  } else if(!counselor.scheduleDays.includes(dayOfWeekName)) {
+    object.message = 'There are no times available, please select another day!';
+  } else {
+    const times = counselor.scheduleTimes.split(' ');//13:00
+    const dayISO = cellDate.toISOString().split('T');
+    const dateTimes = times.map(time => new Date(`${dayISO[0]}T${time}:00`));
+    if (counselor.appointments > 0){
+      object.times = dateTimes.filter(time => counselor.appointments.includes(time));
+    } else {
+      object.times = times;
+    }
+  }
+  console.log(object);
+  return object;
 };
 
-/*
 
-blackout if a counselor day has appts for each time
-blackout past dates
-
-        scheduleDays: {
-            type: String,
-            default: ''
-        },
-        scheduleTimes: {
-            type: String,
-            default: ''
-        },
-        reservations: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Reservation'
-            }
-        ],
-        
-    reservationSubject: {
-      type: String,
-      required: true,
-      default: 'Walk In'
-    },
-    student: {
-      type: Schema.Types.ObjectId,
-      ref: 'User',
-      required: false
-    },
-    counselor: {
-      type: Schema.Types.ObjectId,
-      ref: 'User',
-      required: false
-    },  
-    date: {
-      type: Date,
-      default: Date.now,
-      get: timestamp => dateFormat(timestamp)
-    }
-*/
+module.exports = {compareDates}
