@@ -78,6 +78,7 @@ const Calendar = ({ showDetailsHandle }) => {
     let formattedDate = "";
     while (day <= endDate) {
       for (let i = 0; i < 5; i++) {
+        console.log(day);
         formattedDate = format(day, dateFormat);
         const cloneDay = day;
         days.push(

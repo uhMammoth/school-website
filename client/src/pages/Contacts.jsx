@@ -26,7 +26,7 @@ const Contacts = () => {
         </div>
         <div>
           <label for="large-input" class=" rblue block font-thin mb-2   text-gray-900 dark:text-gray-200 mt-8">Tell us</label>
-          <input type="text" id="large-input" class="homebtn rblue h-44  block p-4 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-300 dark:border-gray-300 dark:placeholder-gray-300 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
+          <textarea type="text" id="large-input" class="homebtn rblue h-44  block p-4 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-300 dark:border-gray-300 dark:placeholder-gray-300 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
         </div>
         <div className="pt-2 pb-12">
           <button type="button" class="nav bgblue yellow w-full font-bold uppercase text-sm px-6 py-3 rounded-xl shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150">Submit.</button>                        
