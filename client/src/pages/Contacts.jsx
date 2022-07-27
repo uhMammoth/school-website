@@ -7,10 +7,9 @@ const Contacts = () => {
   return (
   
     <section className="lg:grid lg:grid-cols-12 lg:gap-3">
-
+      
     {/*  mobile  */ }
     <div className='lg:col-span-6' >
-
 
     <div className='w-auto h-auto mt-24 md:mx-40 lg:w-3/4 lg-mx-auto'>
       <form className='mx-4'>
@@ -33,12 +32,10 @@ const Contacts = () => {
         </div>
       </form>
     </div>  
-
-
 </div>
 
 <div className='hidden lg:flex lg:col-span-5 lg:h-screen'>
-<img src={side} alt='students hugging staring at the sun' className=' nav m-auto mb-1 lg:h-screen home shadow-lg md:h-80	sm:h-40'/>
+  <img src={side} alt='students hugging staring at the sun' className=' nav m-auto mb-1 lg:h-screen home shadow-lg md:h-80	sm:h-40'/>
 </div></section>
 
   )

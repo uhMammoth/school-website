@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React, { useState} from 'react';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 // import { useParams } from 'react-router-dom';
@@ -6,6 +7,7 @@ import {COUNSELORS} from '../utils/queries';
 import pen1 from '../assets/left.jpg'
 import pen2 from '../assets/2pen.jpg'
 import bottom from '../assets/counselorb.jpg'
+
 
 
 const ImageSlider = () => {
@@ -43,12 +45,18 @@ const ImageSlider = () => {
                     <div className={index === current ? 'slide active' : 'slide'} key={index}>
                         {index === current && (
                         <><div className='  px-10 pt-72 md:px-32 md:pt-16 rblue lg:pt-12 lg:w-[700px]'>
-                            <h2 className='text-3xl pb-4 md:pb-4 text-center font-thin lg:text-5xl'>{slide.name}</h2>
                             <img src={require(`../assets/${counselor.imageUrl}`)} alt='' className='mx-auto rounded-full h-44 w-44 md:h-80 md:w-80' />
-                            <h2 className='pt-4 md:pt-4 text-2xl text-center font-thin lg:text-5xl'>Specialty: {slide.area}</h2>
-                            <h2 className='py-6 md:py-4 w-44 mx-auto text-center font-thin lg:text-2xl'>{slide.title}</h2>
-                            <h2 className='py-3 leading-relaxed indent-10 text-sm text-left font-thin lg:text-xl'>{slide.lorem}</h2>
-                            <h2 className='pb-3 leading-relaxed indent-10 text-sm text-left font-thin lg:text-xl'>{slide.lorem}</h2>
+                            
+                            {/* for individual counselor data, ready.
+                            import { SliderData } from '../components/SliderData';
+                            {SliderData.map((slide, index) => {
+                             <h2 className='text-3xl pb-4 md:pb-4 text-center font-thin lg:text-5xl'>{slide.name}</h2>
+                            <img src={require(`../assets/${counselor.imageUrl}`)} alt='' className='mx-auto rounded-full h-44 w-44 md:h-80 md:w-80' />
+                            <h2 className='pt-4 md:pt-4 text-2xl text-center font-thin lg:text-5xl'>Specialty: {slide.area}</h2>*/}
+                            
+                            <h2 className='py-6 md:py-4 w-44 mx-auto text-center font-thin lg:text-2xl'>We are here for you!</h2>
+                            <h2 className='py-3 leading-relaxed indent-10 text-sm text-left font-thin lg:text-xl'>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicinglorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicinglorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicing</h2>
+                            <h2 className='pb-3 leading-relaxed indent-10 text-sm text-left font-thin lg:text-xl'>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicinglorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adipisicing</h2>
 
                         </div>
                         <img src={bottom} alt='counselor helping student' className='w-full h-36 md:h-80 pt-2 md:pt-6' />

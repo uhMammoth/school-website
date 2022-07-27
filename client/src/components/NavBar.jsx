@@ -56,16 +56,16 @@ const NavBar = () => {
 
 
 
-            <Link className=' w-full h-full font-semibold text-xl p-2 hover:text-blue-700'  to='/'>Home</Link>
+            <Link className=' w-full h-full font-thing text-xl p-2 hover:text-blue-700 yellow'  to='/'>Home</Link>
                  
                 {Auth.loggedIn() ? (
                     <>
-                        <Link className=' w-full h-full font-semibold text-xl p-2 hover:text-blue-700'  to='/dashboard'>Dashboard</Link>
-                        <a className=' w-full h-full font-semibold text-xl p-2 hover:text-blue-700' href="/" onClick={logout}>Logout</a>
+                        <Link className=' w-full h-full font-thin text-xl yellow p-2 hover:text-blue-700'  to='/dashboard'>Dashboard</Link>
+                        <a className=' w-full h-full font-thin yellow text-xl p-2 hover:text-blue-700' href="/" onClick={logout}>Logout</a>
                     </>                    
                 ) : (
                     <>
-                        <Link className=' w-full h-full font-semibold text-xl p-2 hover:text-blue-700'  to='/login'>Login</Link>
+                        <Link className=' w-full h-full font-thin yellow text-xl p-2 hover:text-blue-700'  to='/login'>Login</Link>
                     </>
                 ) }            
         </div>
