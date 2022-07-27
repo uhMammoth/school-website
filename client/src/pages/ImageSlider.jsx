@@ -54,7 +54,7 @@ const ImageSlider = () => {
                         </div>
                         <img src={require(`../assets/${counselor.imageUrl}`)} alt='counselor helping student' className='w-full h-36 md:h-80 pt-2 md:pt-6' />
                         <div className="  w-full sm:mb-2 pb-12 bottom-0">  
-                            <button type="button" class=" nav bgblue yellow w-full font-bold uppercase text-sm px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150">Schedule now</button>                        
+                            <button type="button" className=" nav bgblue yellow w-full font-bold uppercase text-sm px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150">Schedule now</button>                        
                         </div></>
                         )}
                     </div>

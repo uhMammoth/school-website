@@ -22,19 +22,10 @@ export const UPDATE_SCHED = gql`
 `;
 
 export const ADD_APPT = gql`
-  mutation addAppt($subject: String!, $student: String!, $counselor: String!, $date: String!) {
-    addAppt(subject: $subject, student: $student, counselor: $counselor, date: $date) {
+  mutation addAppt($counselor: String!, $date: String!, $subject: String!) {
+    addAppt(counselor: $counselor, date: $date, subject: $subject) {
+      _id
       appointments {
-        counselor {
-          name
-          _id
-        }
-        student {
-          name
-          _id
-        }
-        subject
-        date
         _id
       }
     }

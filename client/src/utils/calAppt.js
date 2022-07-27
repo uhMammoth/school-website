@@ -19,7 +19,6 @@ function compareDates(counselor, cellDate){
       object.times = times;
     }
   }
-  console.log(object);
   return object;
 };
 

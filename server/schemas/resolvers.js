@@ -66,12 +66,13 @@ const resolvers = {
       }
     },
     //students can make a reservation which saves to botht the student and counselors userData
-    addAppt: async (parent, {input}, context) => {
+    addAppt: async (parent, input, context) => {
+      console.log(context)
       if (context.user) {
         const appt = await Appointment.create({
-          subject: input.subject,
+          apptSubject: input.subject,
           student: context.user._id,
-          counselor: input.counselorId,
+          counselor: input.counselor,
           date: input.date
         });
         //add new appt to student
@@ -82,10 +83,12 @@ const resolvers = {
         )
         //add new appt to counselor
         await User.findOneAndUpdate(
-          { _id: input.counselorId },
+          { _id: input.counselor },
           { $addToSet: { appointments: appt} },
           { new: true, runValidators: true }
         )
+        console.log(appt);
+        console.log(studentAppt);
         return studentAppt;
       }
       throw new AuthenticationError('You need to be logged in!');

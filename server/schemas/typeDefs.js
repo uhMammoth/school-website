@@ -29,7 +29,7 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     updateSched(scheduleDays: String!, scheduleTimes: String!): User
-    addAppt(subject: String!, student: String!, counselor: String!, date: String!): User
+    addAppt(counselor: String!, date: String!, subject: String!): User
     delAppt(_id: ID!): User 
   }
 `;
