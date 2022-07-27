@@ -58,31 +58,33 @@ export default function Dashboard() {
                 {counselor.name}
               </option>))}
       </select>
-      <div className='flex justify-between mx-20'>
+      <div className='flex justify-between mx-22'>
       <Calendar showDetailsHandle={showDetailsHandle} />
-      <UserAppt />
-      </div>
-        </form>
-      
-      </div>
-      <div className='nav rblue h-32 lg:h-72'>
-      <div className='bg-slate-300 h-full'>
-        <div className='flex justify-center pb-2 bg-white rounded-lg w-2/6 m-auto border-2 border-orange-500'>
+      <div className='bg-slate-300 h-full w-full'>
+        <div className='flex flex-wrap justify-center pb-2 bg-white m-auto border-2 border-orange-500'>
             {changeCounselor.scheduleTimes?.split(' ').map((time) => (
               <div className={`flex px-1 pt-2 bg-transparent ${currentTime === time ? 'is-active' : 'not-active'}`} key={time}>
                 <span className='cursor-pointer border-2 border-black w-fit rounded-md' onClick={() => {setCurrentTime(time);}} >{time}</span>
               </div>
               ))}
               </div>
-              <select className='mb-10 my-4'>
+              <div className='flex justify-around items-center pt-10'>
+              <select className='py-1 text-center rounded-md bg-blue-500 text-white'>
                 <option value='subject' selected hidden>Subject</option>
                 <option value='Schedule'>Schedule Classes</option>
                 <option value='Mental Health'>Mental Health</option>
                 <option value='Chat'>Just Chat</option>
                 <option value='Other'>Other</option>
               </select>
-              <button type='submit'>Submit</button>
+              <button type='submit' className='bg-orange-500 w-fit rounded-lg px-10 py-1'>Submit</button>
               </div>
+              </div>
+          </div>
+        </form>
+      </div>
+      <div className='nav rblue h-32 lg:h-72'>
+      <UserAppt />
+      
       </div>
       <div className="text-left my-3 px-5 text-lg rblue lg:text-4xl">1.. 2.. 3.. That's it!</div>
       <div className="mb-3 px-5 text-sm text-left indent-6 rblue lg:text-xl">Lorem ipsum dolor sit amet consectet sit amet consectetur adipisicin sit amet consectetur adipisicinur adipisicing elitsit amet consectetur adipisicing elit. A odit voluptatum impedit. Debitis, voluptates.</div>

@@ -14,7 +14,7 @@
         "imageUrl" : "2.jpg",
         "password" : "%kGjRfUNWUIRwfS_",
         "scheduleDays" : "Mon Tue Wed",
-        "scheduleTimes" : "4:00PM 4:30PM",
+        "scheduleTimes" : "12:00PM 12:30PM 1:00PM 1:30PM 2:00PM 2:30PM 3:00PM 3:30PM 4:00PM 4:30PM 5:00PM",
         "counselor" : true
     },
     { 
