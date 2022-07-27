@@ -316,3 +316,22 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .calendar {
+    min-width: 100%;
+    height: auto;
+  }
+  
+  .calendar-container {
+    flex-wrap: wrap;
+  }
+
+  .user-appt {
+    display: flex;
+    min-width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+}
+

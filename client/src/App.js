@@ -14,9 +14,6 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import Counselors from './pages/ImageSlider';
-import Home from './pages/Home';
-import Contacts from './pages/Contacts';
 import Navbar from './components/NavBar';
 import Footer from './components/Footer';
 import LogIn from './pages/LogIn';
@@ -47,12 +44,9 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<LogIn />} />
+          <Route path="/" element={<LogIn />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/counselor" element={<Counselors />} />
-          <Route path="/contact" element={<Contacts />} />
-          <Route path="*" element={<Navigate replace to="/" />} />
+          <Route path="*" element={<Navigate replace to="/dashboard" />} />
         </Routes>
         <Footer />
       </Router>

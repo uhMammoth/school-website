@@ -47,7 +47,7 @@ export default function Dashboard() {
 
     <div className='lg:col-span-8 lg:w-[1200px]'>
     <img src={Bottom} alt='students using laptop together' className='mt-10 md:mt-14 top-0 w-full h-40 md:h-96' /> 
-    <div className='nav '>
+    <div className='user-appt nav'>
       <div className='nav rblue h-60 lg:h-5/6 bg-slate-300'>
         
       <form>
@@ -58,7 +58,7 @@ export default function Dashboard() {
                 {counselor.name}
               </option>))}
       </select>
-      <div className='flex justify-between mx-22'>
+      <div className='calendar-container flex justify-between mx-22'>
       <Calendar showDetailsHandle={showDetailsHandle} />
       <div className='bg-slate-300 h-full w-full'>
         <div className='flex flex-wrap justify-center pb-2 bg-white m-auto border-2 border-orange-500'>
@@ -86,9 +86,6 @@ export default function Dashboard() {
       <UserAppt />
       
       </div>
-      <div className="text-left my-3 px-5 text-lg rblue lg:text-4xl">1.. 2.. 3.. That's it!</div>
-      <div className="mb-3 px-5 text-sm text-left indent-6 rblue lg:text-xl">Lorem ipsum dolor sit amet consectet sit amet consectetur adipisicin sit amet consectetur adipisicinur adipisicing elitsit amet consectetur adipisicing elit. A odit voluptatum impedit. Debitis, voluptates.</div>
-      <img src={Grad} alt='graduates throwing graduation caps' className=' bottom-0 w-full h-40 md:h-96 mb-10 md:mb-13' />
     </div></div></section>
   );
 };
