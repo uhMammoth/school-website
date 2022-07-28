@@ -7,13 +7,11 @@ const resolvers = {
     //individual user query for student or counselor dashboard
     me: async (parent, args, context) => {
       if (context.user.counselor) {
-        console.log('counselor logged in');
         const UserData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
           .populate('appointments');
         return UserData;
       }else if (!context.user.counselor){
-        console.log('student logged in');
         const UserData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
           .populate('appointments');
@@ -67,7 +65,6 @@ const resolvers = {
     },
     //students can make a reservation which saves to botht the student and counselors userData
     addAppt: async (parent, input, context) => {
-      console.log(context)
       if (context.user) {
         const appt = await Appointment.create({
           apptSubject: input.subject,
@@ -86,9 +83,7 @@ const resolvers = {
           { _id: input.counselor },
           { $addToSet: { appointments: appt} },
           { new: true, runValidators: true }
-        )
-        console.log(appt);
-        console.log(studentAppt);
+        );
         return studentAppt;
       }
       throw new AuthenticationError('You need to be logged in!');
