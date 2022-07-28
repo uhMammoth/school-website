@@ -4,7 +4,7 @@ import sidebar from '../assets/sidebar.jpg'
 import Calendar from '../components/Calendar';
 import UserAppt from '../components/UserAppt';
 import {useQuery, useMutation} from '@apollo/client';
-import {COUNSELORS} from '../utils/queries';
+import {QUERY_ME, COUNSELORS} from '../utils/queries';
 import {ADD_APPT} from '../utils/mutations'
 
 /*  dropdown bar  */
@@ -84,7 +84,7 @@ return (
   </div>
   <div className='lg:col-span-8 lg:w-[1200px]'>
     <img src={Bottom} alt='students using laptop together' className='mt-10 md:mt-14 top-0 w-full h-40 md:h-96' /> 
-    <div className='nav '>
+    <div className='user-appt nav'>
       <form className='nav rblue h-60 lg:h-5/6 bg-slate-300' onSubmit={handleFormSubmit}>
         <select className='pb-4 w-full flex justify-center items-center bg-blue-500 text-center text-white' name='counselor' onChange={handleChange}>
         <option value='Counselor' selected hidden>Choose Counselor</option>
@@ -93,7 +93,7 @@ return (
         {counselor.name}
         </option>))}
         </select>
-        <div className='flex justify-between mx-22'>
+        <div className='calendar-container flex justify-between mx-22'>
           <Calendar apptHandler={apptHandler} counselor={counselor}/>
           <div className='bg-slate-300 h-full w-full'>
             <div className='flex flex-wrap justify-center pb-2 bg-white m-auto border-2 border-orange-500'>
@@ -120,6 +120,7 @@ return (
         </div>
       </form>
     </div>
+    <UserAppt />
   </div>
 </section>
   );

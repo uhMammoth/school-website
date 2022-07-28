@@ -14,60 +14,38 @@ const NavBar = () => {
     return (
         
         /*  mobile hamburger/hidden  */
-        <div className='z-20 fixed top-0  w-full h-9 md:h-11  flex bgblue nav' >        
-            
-            <ul className={ 'hidden border-2 nav rblue bgblue yellow w-full top-0 absolute md:flex justify-between'}>
-                <Link className='nav w-full h-full font-light text-xl p-2'  to='/'>Home</Link>
+        <div>
+        <div className='z-20 fixed w-full h-9 md:h-11 flex' >      
+        
+            <div className='w-full text-4xl font-semibold'>
+             
+            <div className='fixed top-0 right-0'>
+            <ul className={ 'hidden fixed border-2 text-white right-0 bg-blue-500 absolute md:flex'}>
+                
                 {Auth.loggedIn() ? (
                     <>
-                        <Link className=' nav w-full h-full font-light text-xl p-2'  to='/dashboard'>Dashboard</Link>
                         <a className=' nav w-full h-full font-light text-xl p-2' href="/" onClick={logout}>Logout</a>
                     </>                    
                 ) : (
                     <>
-                        <Link className=' nav w-full h-full font-light text-xl p-2'  to='/login'>Login</Link>
                     </>
                 ) }
-                <Link className='nav w-full h-full font-light text-xl p-2'  to='/counselor'>Counselor</Link>
-                <Link className='nav w-full h-full font-light text-xl p-2'  to='/contact'>Contact</Link>
             </ul>    
+            </div>
+            </div>
             
             <div onClick={handleClick}className='sm:hidden z-10 mx-auto pt-1 md:pt-3 text-2xl orange' >
                 {!nav ? <FaBars /> : <FaTimes />}
             </div>
             <ul className={!nav? 'hidden':' border-2 mt-9 md:mt-12 nav rblue bg-white w-full top-0 absolute flex justify-between'}>
-                <Link className=' w-full h-full font-light text-xl p-2'  to='/'>Home</Link>
                 {Auth.loggedIn() ? (
                     <>
-                        <Link className=' w-full h-full font-light text-xl p-2'  to='/dashboard'>Dashboard</Link>
                         <a className=' w-full h-full font-light text-xl p-2' href="/" onClick={logout}>Logout</a>
                     </>                    
                 ) : (<>
-                    <Link className=' w-full h-full font-light text-xl p-2'  to='/login'>Login</Link>
                 </>) }
-                <Link className=' w-full h-full font-light text-xl p-2'  to='/counselor'>Counselor</Link>
-                <Link className=' w-full h-full font-light text-xl p-2'  to='/contact'>Contact</Link>
-            </ul>
-
-
-
-
-
-
-
-
-            <Link className=' w-full h-full font-semibold text-xl p-2 hover:text-blue-700'  to='/'>Home</Link>
-                 
-                {Auth.loggedIn() ? (
-                    <>
-                        <Link className=' w-full h-full font-semibold text-xl p-2 hover:text-blue-700'  to='/dashboard'>Dashboard</Link>
-                        <a className=' w-full h-full font-semibold text-xl p-2 hover:text-blue-700' href="/" onClick={logout}>Logout</a>
-                    </>                    
-                ) : (
-                    <>
-                        <Link className=' w-full h-full font-semibold text-xl p-2 hover:text-blue-700'  to='/login'>Login</Link>
-                    </>
-                ) }            
+            </ul>               
+        </div>
         </div>
     );
 };
