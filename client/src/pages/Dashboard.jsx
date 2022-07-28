@@ -87,7 +87,7 @@ return (
     <div className='user-appt nav'>
       <form className='nav rblue h-60 lg:h-5/6 bg-slate-300' onSubmit={handleFormSubmit}>
         <select className='pb-4 w-full flex justify-center items-center bg-blue-500 text-center text-white' name='counselor' onChange={handleChange}>
-        <option value='Counselor' selected hidden>Choose Counselor</option>
+        <option value='Counselor' defaultValue={'Counselor'} hidden>Choose Counselor</option>
         {counselors.map((counselor) => (
         <option className='bg-white text-black' key={counselor._id} value={counselor._id}>
         {counselor.name}
@@ -108,7 +108,7 @@ return (
             </div>
             <div className='flex justify-around items-center pt-10'>
             <select className='py-1 text-center rounded-md bg-blue-500 text-white' name='subject' onChange={handleChange}>
-              <option value='subject' selected hidden>Subject</option>
+              <option value='subject' defaultValue={'Subject'} hidden>Subject</option>
               <option value='Schedule'>Schedule Classes</option>
               <option value='Mental Health'>Mental Health</option>
               <option value='Chat'>Just Chat</option>

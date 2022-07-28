@@ -5,7 +5,6 @@ import {QUERY_ME} from '../utils/queries';
 export default function UserAppt (){
     const {data} = useQuery(QUERY_ME);
     const userAppt = data?.me.appointments;
-    console.log(userAppt);
     return (        
         <section className="bg-white rounded-lg px-12 pt-4 text-center">            
             Your Upcoming Appointments <br/>
@@ -14,7 +13,7 @@ export default function UserAppt (){
                 <div>No Appointments!</div>
             ) : (
                 userAppt.map(appointment => (
-                    <div>
+                    <div key={appointment._id}>
                         <span>{appointment.date}</span>
                     </div>
                 )) 
