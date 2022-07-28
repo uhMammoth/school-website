@@ -4,7 +4,7 @@ import sidebar from '../assets/sidebar.jpg'
 import Calendar from '../components/Calendar';
 import UserAppt from '../components/UserAppt';
 import {useQuery, useMutation} from '@apollo/client';
-import {QUERY_ME, COUNSELORS} from '../utils/queries';
+import {COUNSELORS} from '../utils/queries';
 import {ADD_APPT} from '../utils/mutations'
 
 /*  dropdown bar  */
@@ -13,8 +13,8 @@ export default function Dashboard() {
     const {data} = useQuery(COUNSELORS);
     const counselors = data?.counselors || {};
 
-    const [formState, setFormState] = useState({ counselor: '', date: '',  time: '', subject: ''});
-    const [addAppt, { error }] = useMutation(ADD_APPT);
+    
+    const [addAppt] = useMutation(ADD_APPT);
 
     const [counselor, setCounselor] = useState(false);
     const [currentTime, setCurrentTime] = useState(false);
