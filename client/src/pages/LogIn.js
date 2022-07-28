@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
-import image from '../assets/iimage.jpg'
-import { Link } from 'react-router-dom'
-import { RiLoginCircleFill } from 'react-icons/ri'; 
-import { MdCreate } from 'react-icons/md';
+import { RiLoginCircleFill } from 'react-icons/ri';
 import side from '../assets/side.jpg'
 
 import { useMutation } from '@apollo/client';
@@ -11,7 +8,7 @@ import Auth from '../utils/auth';
 
 const Login = () => {
     const [formState, setFormState] = useState({ email: '', password: '' });
-    const [login, { error }] = useMutation(LOGIN_USER);
+    const [login] = useMutation(LOGIN_USER);
   
     // update state based on form input changes
     const handleChange = (event) => {
